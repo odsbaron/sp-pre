@@ -205,10 +205,11 @@
 
     .hero-title {
       margin: 0;
-      max-width: 980px;
-      font-size: clamp(30px, 4.2vw, 48px);
-      line-height: 1.05;
+      max-width: 760px;
+      font-size: 44px;
+      line-height: 1.08;
       font-weight: 820;
+      text-wrap: balance;
     }
 
     .hero-copy {
@@ -1105,7 +1106,7 @@
       }
 
       .hero-title {
-        font-size: 34px;
+        font-size: 32px;
       }
 
       .content-head,
@@ -1141,9 +1142,9 @@
     <main>
       <section id="overview" class="hero-grid" aria-labelledby="dashboard-title">
         <div class="summary-panel">
-          <h2 id="dashboard-title" class="hero-title">From stationary baselines to non-stationary extensions, the full experiment story in one dashboard.</h2>
+          <h2 id="dashboard-title" class="hero-title">Thompson Sampling for Non-Stationary Bandits</h2>
           <p class="hero-copy">
-            This dashboard summarizes the complete experiment package: stationary Bernoulli bandits, abrupt non-stationary environments, window sensitivity, Adaptive-SW-TS ablations, and paper-driven extended sweeps. The central finding is clear: standard Thompson Sampling is strongest in stationary settings; once the reward distribution changes, sliding-window forgetting becomes much more robust.
+            From stationary baselines to non-stationary extensions, this dashboard summarizes Bernoulli bandit experiments, window sensitivity, Adaptive-SW-TS ablations, and paper-driven extended sweeps.
           </p>
           <div class="hero-meta">
             <span class="meta-pill"><span class="meta-dot"></span>Horizon 10000</span>
