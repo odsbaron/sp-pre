@@ -1,0 +1,721 @@
+experiment,scenario,family,algorithm,parameter_name,parameter_value,seed,horizon,final_regret,final_reward,final_optimal_arm_rate
+environment_sweep,single_reversal,Baseline,Thompson Sampling,none,none,52026,10000,239.78999999999996,1243.0,0.5804
+environment_sweep,single_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,52026,10000,468.69999999999993,1044.0,0.2271
+environment_sweep,single_reversal,SW-UCB,SW-UCB W=500,window,500,52026,10000,443.35999999999996,1021.0,0.2552
+environment_sweep,single_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,52026,10000,407.59,1068.0,0.2915
+environment_sweep,single_reversal,SW-TS,SW-TS W=2000,window,2000,52026,10000,216.48000000000002,1263.0,0.6032
+environment_sweep,single_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,52026,10000,290.39,1186.0,0.4409
+environment_sweep,single_reversal,Baseline,Thompson Sampling,none,none,52027,10000,401.96,1078.0,0.4192
+environment_sweep,single_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,52027,10000,470.00999999999993,1002.0,0.2273
+environment_sweep,single_reversal,SW-UCB,SW-UCB W=500,window,500,52027,10000,429.17999999999995,1051.0,0.2654
+environment_sweep,single_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,52027,10000,403.59,1104.0,0.3027
+environment_sweep,single_reversal,SW-TS,SW-TS W=2000,window,2000,52027,10000,206.55999999999997,1305.0,0.6135
+environment_sweep,single_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,52027,10000,310.64,1197.0,0.4211
+environment_sweep,single_reversal,Baseline,Thompson Sampling,none,none,52028,10000,374.78,1162.0,0.5385
+environment_sweep,single_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,52028,10000,467.27,1092.0,0.2278
+environment_sweep,single_reversal,SW-UCB,SW-UCB W=500,window,500,52028,10000,437.96999999999997,1114.0,0.2611
+environment_sweep,single_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,52028,10000,385.27,1169.0,0.3283
+environment_sweep,single_reversal,SW-TS,SW-TS W=2000,window,2000,52028,10000,139.98,1425.0,0.7429
+environment_sweep,single_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,52028,10000,244.08999999999997,1316.0,0.5534
+environment_sweep,single_reversal,Baseline,Thompson Sampling,none,none,52029,10000,375.38,1091.0,0.4348
+environment_sweep,single_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,52029,10000,465.28999999999996,1027.0,0.2352
+environment_sweep,single_reversal,SW-UCB,SW-UCB W=500,window,500,52029,10000,432.42999999999995,1060.0,0.2729
+environment_sweep,single_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,52029,10000,406.89,1089.0,0.2941
+environment_sweep,single_reversal,SW-TS,SW-TS W=2000,window,2000,52029,10000,210.45,1259.0,0.6341
+environment_sweep,single_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,52029,10000,279.59,1217.0,0.4635
+environment_sweep,single_reversal,Baseline,Thompson Sampling,none,none,52030,10000,411.88999999999993,1055.0,0.4486
+environment_sweep,single_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,52030,10000,465.88999999999993,1017.0,0.2291
+environment_sweep,single_reversal,SW-UCB,SW-UCB W=500,window,500,52030,10000,431.73999999999995,1081.0,0.266
+environment_sweep,single_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,52030,10000,395.4799999999999,1119.0,0.308
+environment_sweep,single_reversal,SW-TS,SW-TS W=2000,window,2000,52030,10000,169.29999999999998,1305.0,0.7135
+environment_sweep,single_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,52030,10000,237.15999999999997,1255.0,0.5457
+environment_sweep,single_reversal,Baseline,Thompson Sampling,none,none,52031,10000,410.8399999999999,1113.0,0.403
+environment_sweep,single_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,52031,10000,469.91999999999996,1029.0,0.2247
+environment_sweep,single_reversal,SW-UCB,SW-UCB W=500,window,500,52031,10000,433.49,1086.0,0.2614
+environment_sweep,single_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,52031,10000,403.2,1094.0,0.2983
+environment_sweep,single_reversal,SW-TS,SW-TS W=2000,window,2000,52031,10000,222.26999999999998,1297.0,0.5883
+environment_sweep,single_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,52031,10000,276.94999999999993,1244.0,0.4839
+environment_sweep,single_reversal,Baseline,Thompson Sampling,none,none,52032,10000,207.73,1287.0,0.669
+environment_sweep,single_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,52032,10000,469.50999999999993,1036.0,0.2261
+environment_sweep,single_reversal,SW-UCB,SW-UCB W=500,window,500,52032,10000,429.59999999999997,1106.0,0.2666
+environment_sweep,single_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,52032,10000,391.67999999999995,1136.0,0.3131
+environment_sweep,single_reversal,SW-TS,SW-TS W=2000,window,2000,52032,10000,251.11999999999998,1269.0,0.4608
+environment_sweep,single_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,52032,10000,293.58,1226.0,0.4408
+environment_sweep,single_reversal,Baseline,Thompson Sampling,none,none,52033,10000,299.98999999999995,1145.0,0.5228
+environment_sweep,single_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,52033,10000,472.25999999999993,979.0,0.2224
+environment_sweep,single_reversal,SW-UCB,SW-UCB W=500,window,500,52033,10000,435.75999999999993,1006.0,0.2648
+environment_sweep,single_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,52033,10000,420.76,1007.0,0.2808
+environment_sweep,single_reversal,SW-TS,SW-TS W=2000,window,2000,52033,10000,235.02999999999997,1196.0,0.4808
+environment_sweep,single_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,52033,10000,283.23,1131.0,0.4726
+environment_sweep,single_reversal,Baseline,Thompson Sampling,none,none,52034,10000,372.30999999999995,1149.0,0.5433
+environment_sweep,single_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,52034,10000,466.54999999999995,1048.0,0.2314
+environment_sweep,single_reversal,SW-UCB,SW-UCB W=500,window,500,52034,10000,431.76,1090.0,0.2641
+environment_sweep,single_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,52034,10000,373.43999999999994,1128.0,0.3388
+environment_sweep,single_reversal,SW-TS,SW-TS W=2000,window,2000,52034,10000,191.81,1308.0,0.596
+environment_sweep,single_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,52034,10000,299.58,1233.0,0.4299
+environment_sweep,single_reversal,Baseline,Thompson Sampling,none,none,52035,10000,232.62999999999997,1310.0,0.6806
+environment_sweep,single_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,52035,10000,472.19999999999993,1072.0,0.2275
+environment_sweep,single_reversal,SW-UCB,SW-UCB W=500,window,500,52035,10000,439.67999999999995,1066.0,0.2557
+environment_sweep,single_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,52035,10000,411.0,1119.0,0.2832
+environment_sweep,single_reversal,SW-TS,SW-TS W=2000,window,2000,52035,10000,187.53999999999994,1353.0,0.674
+environment_sweep,single_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,52035,10000,297.28,1236.0,0.4251
+environment_sweep,single_reversal,Baseline,Thompson Sampling,none,none,52036,10000,303.09999999999997,1246.0,0.6555
+environment_sweep,single_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,52036,10000,468.49999999999994,1030.0,0.2262
+environment_sweep,single_reversal,SW-UCB,SW-UCB W=500,window,500,52036,10000,431.3299999999999,1093.0,0.273
+environment_sweep,single_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,52036,10000,401.91999999999996,1108.0,0.2946
+environment_sweep,single_reversal,SW-TS,SW-TS W=2000,window,2000,52036,10000,175.68999999999997,1370.0,0.7074
+environment_sweep,single_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,52036,10000,226.60999999999996,1300.0,0.5947
+environment_sweep,single_reversal,Baseline,Thompson Sampling,none,none,52037,10000,440.34999999999997,1083.0,0.4196
+environment_sweep,single_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,52037,10000,469.44999999999993,1011.0,0.2239
+environment_sweep,single_reversal,SW-UCB,SW-UCB W=500,window,500,52037,10000,438.8599999999999,1053.0,0.2637
+environment_sweep,single_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,52037,10000,396.51,1117.0,0.3072
+environment_sweep,single_reversal,SW-TS,SW-TS W=2000,window,2000,52037,10000,186.23999999999995,1324.0,0.6743
+environment_sweep,single_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,52037,10000,291.09,1183.0,0.4704
+environment_sweep,single_reversal,Baseline,Thompson Sampling,none,none,52038,10000,482.68999999999994,1016.0,0.411
+environment_sweep,single_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,52038,10000,467.74999999999994,1019.0,0.2316
+environment_sweep,single_reversal,SW-UCB,SW-UCB W=500,window,500,52038,10000,440.34,1066.0,0.2523
+environment_sweep,single_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,52038,10000,413.57,1067.0,0.2678
+environment_sweep,single_reversal,SW-TS,SW-TS W=2000,window,2000,52038,10000,206.65999999999997,1284.0,0.6612
+environment_sweep,single_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,52038,10000,295.13,1189.0,0.4654
+environment_sweep,single_reversal,Baseline,Thompson Sampling,none,none,52039,10000,287.23999999999995,1167.0,0.6255
+environment_sweep,single_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,52039,10000,466.78,1004.0,0.2287
+environment_sweep,single_reversal,SW-UCB,SW-UCB W=500,window,500,52039,10000,440.7199999999999,1037.0,0.2481
+environment_sweep,single_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,52039,10000,415.28,1036.0,0.2774
+environment_sweep,single_reversal,SW-TS,SW-TS W=2000,window,2000,52039,10000,159.01,1290.0,0.6942
+environment_sweep,single_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,52039,10000,302.77,1158.0,0.4316
+environment_sweep,single_reversal,Baseline,Thompson Sampling,none,none,52040,10000,346.04999999999995,1144.0,0.4591
+environment_sweep,single_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,52040,10000,469.1099999999999,997.0,0.233
+environment_sweep,single_reversal,SW-UCB,SW-UCB W=500,window,500,52040,10000,436.94999999999993,1041.0,0.2579
+environment_sweep,single_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,52040,10000,406.54999999999995,1069.0,0.2976
+environment_sweep,single_reversal,SW-TS,SW-TS W=2000,window,2000,52040,10000,196.29,1302.0,0.6786
+environment_sweep,single_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,52040,10000,250.47999999999996,1238.0,0.541
+environment_sweep,single_reversal,Baseline,Thompson Sampling,none,none,52041,10000,378.12,1099.0,0.565
+environment_sweep,single_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,52041,10000,468.2199999999999,1020.0,0.2302
+environment_sweep,single_reversal,SW-UCB,SW-UCB W=500,window,500,52041,10000,436.5,1045.0,0.2611
+environment_sweep,single_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,52041,10000,402.48999999999995,1061.0,0.3051
+environment_sweep,single_reversal,SW-TS,SW-TS W=2000,window,2000,52041,10000,154.02999999999997,1327.0,0.7353
+environment_sweep,single_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,52041,10000,298.52,1186.0,0.4715
+environment_sweep,single_reversal,Baseline,Thompson Sampling,none,none,52042,10000,382.56999999999994,1102.0,0.4868
+environment_sweep,single_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,52042,10000,475.34999999999997,1017.0,0.2208
+environment_sweep,single_reversal,SW-UCB,SW-UCB W=500,window,500,52042,10000,440.5899999999999,1055.0,0.2504
+environment_sweep,single_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,52042,10000,422.51,1076.0,0.2626
+environment_sweep,single_reversal,SW-TS,SW-TS W=2000,window,2000,52042,10000,134.57,1350.0,0.7636
+environment_sweep,single_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,52042,10000,253.72999999999996,1246.0,0.5244
+environment_sweep,single_reversal,Baseline,Thompson Sampling,none,none,52043,10000,216.40999999999997,1336.0,0.7455
+environment_sweep,single_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,52043,10000,467.52,1081.0,0.2314
+environment_sweep,single_reversal,SW-UCB,SW-UCB W=500,window,500,52043,10000,438.19999999999993,1109.0,0.2518
+environment_sweep,single_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,52043,10000,384.7099999999999,1177.0,0.3415
+environment_sweep,single_reversal,SW-TS,SW-TS W=2000,window,2000,52043,10000,153.57999999999998,1403.0,0.7353
+environment_sweep,single_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,52043,10000,245.88999999999996,1282.0,0.5763
+environment_sweep,single_reversal,Baseline,Thompson Sampling,none,none,52044,10000,265.60999999999996,1283.0,0.5614
+environment_sweep,single_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,52044,10000,466.61999999999995,1056.0,0.2286
+environment_sweep,single_reversal,SW-UCB,SW-UCB W=500,window,500,52044,10000,439.05999999999995,1082.0,0.2494
+environment_sweep,single_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,52044,10000,390.77,1148.0,0.313
+environment_sweep,single_reversal,SW-TS,SW-TS W=2000,window,2000,52044,10000,196.95999999999998,1328.0,0.6587
+environment_sweep,single_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,52044,10000,271.66999999999996,1260.0,0.4979
+environment_sweep,single_reversal,Baseline,Thompson Sampling,none,none,52045,10000,464.5299999999999,1050.0,0.4017
+environment_sweep,single_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,52045,10000,465.53,1041.0,0.2292
+environment_sweep,single_reversal,SW-UCB,SW-UCB W=500,window,500,52045,10000,443.5799999999999,1043.0,0.2531
+environment_sweep,single_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,52045,10000,403.84,1079.0,0.2903
+environment_sweep,single_reversal,SW-TS,SW-TS W=2000,window,2000,52045,10000,140.57,1357.0,0.7397
+environment_sweep,single_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,52045,10000,292.90999999999997,1200.0,0.4501
+environment_sweep,single_reversal,Baseline,Thompson Sampling,none,none,52046,10000,402.68999999999994,1157.0,0.5289
+environment_sweep,single_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,52046,10000,471.43999999999994,1053.0,0.2355
+environment_sweep,single_reversal,SW-UCB,SW-UCB W=500,window,500,52046,10000,437.26,1101.0,0.2603
+environment_sweep,single_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,52046,10000,409.15999999999997,1117.0,0.2882
+environment_sweep,single_reversal,SW-TS,SW-TS W=2000,window,2000,52046,10000,202.33999999999997,1336.0,0.6764
+environment_sweep,single_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,52046,10000,261.09999999999997,1256.0,0.4798
+environment_sweep,single_reversal,Baseline,Thompson Sampling,none,none,52047,10000,200.90999999999997,1301.0,0.7636
+environment_sweep,single_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,52047,10000,464.9799999999999,1045.0,0.2343
+environment_sweep,single_reversal,SW-UCB,SW-UCB W=500,window,500,52047,10000,434.01,1091.0,0.2614
+environment_sweep,single_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,52047,10000,399.75,1130.0,0.2917
+environment_sweep,single_reversal,SW-TS,SW-TS W=2000,window,2000,52047,10000,192.82,1315.0,0.6842
+environment_sweep,single_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,52047,10000,268.74999999999994,1234.0,0.5026
+environment_sweep,single_reversal,Baseline,Thompson Sampling,none,none,52048,10000,256.19,1278.0,0.3905
+environment_sweep,single_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,52048,10000,471.90999999999997,1045.0,0.2173
+environment_sweep,single_reversal,SW-UCB,SW-UCB W=500,window,500,52048,10000,434.41999999999996,1131.0,0.2519
+environment_sweep,single_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,52048,10000,398.65999999999997,1133.0,0.3194
+environment_sweep,single_reversal,SW-TS,SW-TS W=2000,window,2000,52048,10000,277.49,1263.0,0.3593
+environment_sweep,single_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,52048,10000,337.24,1200.0,0.3568
+environment_sweep,single_reversal,Baseline,Thompson Sampling,none,none,52049,10000,337.21,1189.0,0.5243
+environment_sweep,single_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,52049,10000,470.66999999999996,1011.0,0.2253
+environment_sweep,single_reversal,SW-UCB,SW-UCB W=500,window,500,52049,10000,435.55999999999995,1076.0,0.261
+environment_sweep,single_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,52049,10000,395.34,1095.0,0.3157
+environment_sweep,single_reversal,SW-TS,SW-TS W=2000,window,2000,52049,10000,186.95999999999998,1345.0,0.6566
+environment_sweep,single_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,52049,10000,297.97999999999996,1206.0,0.4211
+environment_sweep,single_reversal,Baseline,Thompson Sampling,none,none,52050,10000,287.66999999999996,1215.0,0.5948
+environment_sweep,single_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,52050,10000,464.62,1036.0,0.2341
+environment_sweep,single_reversal,SW-UCB,SW-UCB W=500,window,500,52050,10000,438.51,1040.0,0.2636
+environment_sweep,single_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,52050,10000,399.5799999999999,1113.0,0.2975
+environment_sweep,single_reversal,SW-TS,SW-TS W=2000,window,2000,52050,10000,175.58999999999997,1327.0,0.646
+environment_sweep,single_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,52050,10000,272.21000000000004,1217.0,0.4779
+environment_sweep,single_reversal,Baseline,Thompson Sampling,none,none,52051,10000,474.96999999999997,1048.0,0.4294
+environment_sweep,single_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,52051,10000,462.69999999999993,1076.0,0.2338
+environment_sweep,single_reversal,SW-UCB,SW-UCB W=500,window,500,52051,10000,430.67999999999995,1099.0,0.2776
+environment_sweep,single_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,52051,10000,400.60999999999996,1128.0,0.3067
+environment_sweep,single_reversal,SW-TS,SW-TS W=2000,window,2000,52051,10000,149.01,1392.0,0.7467
+environment_sweep,single_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,52051,10000,286.34999999999997,1244.0,0.4774
+environment_sweep,single_reversal,Baseline,Thompson Sampling,none,none,52052,10000,269.28,1221.0,0.6754
+environment_sweep,single_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,52052,10000,464.85999999999996,1052.0,0.234
+environment_sweep,single_reversal,SW-UCB,SW-UCB W=500,window,500,52052,10000,425.0799999999999,1076.0,0.2817
+environment_sweep,single_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,52052,10000,408.52,1087.0,0.2856
+environment_sweep,single_reversal,SW-TS,SW-TS W=2000,window,2000,52052,10000,208.32,1296.0,0.6199
+environment_sweep,single_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,52052,10000,268.44999999999993,1232.0,0.5203
+environment_sweep,single_reversal,Baseline,Thompson Sampling,none,none,52053,10000,289.57,1191.0,0.6082
+environment_sweep,single_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,52053,10000,468.9,1037.0,0.2268
+environment_sweep,single_reversal,SW-UCB,SW-UCB W=500,window,500,52053,10000,428.78999999999996,1077.0,0.2711
+environment_sweep,single_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,52053,10000,403.9599999999999,1107.0,0.2968
+environment_sweep,single_reversal,SW-TS,SW-TS W=2000,window,2000,52053,10000,174.98,1307.0,0.665
+environment_sweep,single_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,52053,10000,279.66999999999996,1208.0,0.4555
+environment_sweep,single_reversal,Baseline,Thompson Sampling,none,none,52054,10000,299.51,1203.0,0.6293
+environment_sweep,single_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,52054,10000,466.93999999999994,1055.0,0.2347
+environment_sweep,single_reversal,SW-UCB,SW-UCB W=500,window,500,52054,10000,441.79999999999995,1092.0,0.2613
+environment_sweep,single_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,52054,10000,400.11999999999995,1100.0,0.2979
+environment_sweep,single_reversal,SW-TS,SW-TS W=2000,window,2000,52054,10000,205.68999999999997,1258.0,0.6307
+environment_sweep,single_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,52054,10000,304.16999999999996,1175.0,0.4048
+environment_sweep,single_reversal,Baseline,Thompson Sampling,none,none,52055,10000,293.83,1196.0,0.4559
+environment_sweep,single_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,52055,10000,465.2299999999999,1027.0,0.2347
+environment_sweep,single_reversal,SW-UCB,SW-UCB W=500,window,500,52055,10000,433.28999999999996,1068.0,0.2676
+environment_sweep,single_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,52055,10000,394.8499999999999,1131.0,0.3037
+environment_sweep,single_reversal,SW-TS,SW-TS W=2000,window,2000,52055,10000,254.69,1228.0,0.486
+environment_sweep,single_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,52055,10000,274.15,1231.0,0.4765
+environment_sweep,multi_breakpoint,Baseline,Thompson Sampling,none,none,53026,10000,459.98,1106.0,0.1815
+environment_sweep,multi_breakpoint,D-UCB,D-UCB gamma=0.99,gamma,0.99,53026,10000,480.90000000000003,1087.0,0.2297
+environment_sweep,multi_breakpoint,SW-UCB,SW-UCB W=500,window,500,53026,10000,437.11,1129.0,0.2759
+environment_sweep,multi_breakpoint,DS-TS,DS-TS gamma=0.99,gamma,0.99,53026,10000,402.03999999999996,1174.0,0.3185
+environment_sweep,multi_breakpoint,SW-TS,SW-TS W=2000,window,2000,53026,10000,330.72999999999996,1250.0,0.3637
+environment_sweep,multi_breakpoint,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,53026,10000,309.87,1256.0,0.4253
+environment_sweep,multi_breakpoint,Baseline,Thompson Sampling,none,none,53027,10000,414.31000000000006,1198.0,0.3491
+environment_sweep,multi_breakpoint,D-UCB,D-UCB gamma=0.99,gamma,0.99,53027,10000,476.24,1103.0,0.2313
+environment_sweep,multi_breakpoint,SW-UCB,SW-UCB W=500,window,500,53027,10000,434.54999999999995,1174.0,0.2738
+environment_sweep,multi_breakpoint,DS-TS,DS-TS gamma=0.99,gamma,0.99,53027,10000,402.87,1185.0,0.3065
+environment_sweep,multi_breakpoint,SW-TS,SW-TS W=2000,window,2000,53027,10000,211.84,1393.0,0.6284
+environment_sweep,multi_breakpoint,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,53027,10000,277.26,1335.0,0.4486
+environment_sweep,multi_breakpoint,Baseline,Thompson Sampling,none,none,53028,10000,469.93,1141.0,0.0818
+environment_sweep,multi_breakpoint,D-UCB,D-UCB gamma=0.99,gamma,0.99,53028,10000,477.09999999999997,1102.0,0.2369
+environment_sweep,multi_breakpoint,SW-UCB,SW-UCB W=500,window,500,53028,10000,428.27000000000004,1185.0,0.2753
+environment_sweep,multi_breakpoint,DS-TS,DS-TS gamma=0.99,gamma,0.99,53028,10000,404.4,1215.0,0.3121
+environment_sweep,multi_breakpoint,SW-TS,SW-TS W=2000,window,2000,53028,10000,278.24,1349.0,0.4246
+environment_sweep,multi_breakpoint,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,53028,10000,365.28,1249.0,0.3249
+environment_sweep,multi_breakpoint,Baseline,Thompson Sampling,none,none,53029,10000,431.19000000000005,1090.0,0.4027
+environment_sweep,multi_breakpoint,D-UCB,D-UCB gamma=0.99,gamma,0.99,53029,10000,480.22,1060.0,0.2311
+environment_sweep,multi_breakpoint,SW-UCB,SW-UCB W=500,window,500,53029,10000,451.15999999999997,1086.0,0.2507
+environment_sweep,multi_breakpoint,DS-TS,DS-TS gamma=0.99,gamma,0.99,53029,10000,412.84,1122.0,0.2962
+environment_sweep,multi_breakpoint,SW-TS,SW-TS W=2000,window,2000,53029,10000,257.6,1273.0,0.5085
+environment_sweep,multi_breakpoint,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,53029,10000,275.96,1269.0,0.4975
+environment_sweep,multi_breakpoint,Baseline,Thompson Sampling,none,none,53030,10000,440.34000000000003,1104.0,0.3428
+environment_sweep,multi_breakpoint,D-UCB,D-UCB gamma=0.99,gamma,0.99,53030,10000,474.45000000000005,1063.0,0.2359
+environment_sweep,multi_breakpoint,SW-UCB,SW-UCB W=500,window,500,53030,10000,446.07,1113.0,0.2629
+environment_sweep,multi_breakpoint,DS-TS,DS-TS gamma=0.99,gamma,0.99,53030,10000,411.18,1090.0,0.3082
+environment_sweep,multi_breakpoint,SW-TS,SW-TS W=2000,window,2000,53030,10000,275.72999999999996,1281.0,0.4784
+environment_sweep,multi_breakpoint,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,53030,10000,304.98,1247.0,0.4348
+environment_sweep,multi_breakpoint,Baseline,Thompson Sampling,none,none,53031,10000,480.58,1078.0,0.3185
+environment_sweep,multi_breakpoint,D-UCB,D-UCB gamma=0.99,gamma,0.99,53031,10000,480.28,1075.0,0.2309
+environment_sweep,multi_breakpoint,SW-UCB,SW-UCB W=500,window,500,53031,10000,445.2,1138.0,0.2604
+environment_sweep,multi_breakpoint,DS-TS,DS-TS gamma=0.99,gamma,0.99,53031,10000,415.09000000000003,1147.0,0.2952
+environment_sweep,multi_breakpoint,SW-TS,SW-TS W=2000,window,2000,53031,10000,218.88,1330.0,0.6324
+environment_sweep,multi_breakpoint,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,53031,10000,303.01,1264.0,0.4472
+environment_sweep,multi_breakpoint,Baseline,Thompson Sampling,none,none,53032,10000,468.54999999999995,1123.0,0.2172
+environment_sweep,multi_breakpoint,D-UCB,D-UCB gamma=0.99,gamma,0.99,53032,10000,478.52,1101.0,0.2332
+environment_sweep,multi_breakpoint,SW-UCB,SW-UCB W=500,window,500,53032,10000,451.90000000000003,1115.0,0.2429
+environment_sweep,multi_breakpoint,DS-TS,DS-TS gamma=0.99,gamma,0.99,53032,10000,416.82000000000005,1166.0,0.2865
+environment_sweep,multi_breakpoint,SW-TS,SW-TS W=2000,window,2000,53032,10000,215.47,1353.0,0.613
+environment_sweep,multi_breakpoint,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,53032,10000,291.13,1286.0,0.4342
+environment_sweep,multi_breakpoint,Baseline,Thompson Sampling,none,none,53033,10000,474.31000000000006,1137.0,0.2682
+environment_sweep,multi_breakpoint,D-UCB,D-UCB gamma=0.99,gamma,0.99,53033,10000,478.29,1100.0,0.2296
+environment_sweep,multi_breakpoint,SW-UCB,SW-UCB W=500,window,500,53033,10000,454.53999999999996,1140.0,0.2506
+environment_sweep,multi_breakpoint,DS-TS,DS-TS gamma=0.99,gamma,0.99,53033,10000,393.37,1197.0,0.3171
+environment_sweep,multi_breakpoint,SW-TS,SW-TS W=2000,window,2000,53033,10000,183.11,1424.0,0.6945
+environment_sweep,multi_breakpoint,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,53033,10000,304.15999999999997,1279.0,0.4277
+environment_sweep,multi_breakpoint,Baseline,Thompson Sampling,none,none,53034,10000,429.75,1119.0,0.3037
+environment_sweep,multi_breakpoint,D-UCB,D-UCB gamma=0.99,gamma,0.99,53034,10000,480.04999999999995,1091.0,0.2273
+environment_sweep,multi_breakpoint,SW-UCB,SW-UCB W=500,window,500,53034,10000,444.16999999999996,1112.0,0.2554
+environment_sweep,multi_breakpoint,DS-TS,DS-TS gamma=0.99,gamma,0.99,53034,10000,402.56,1199.0,0.3088
+environment_sweep,multi_breakpoint,SW-TS,SW-TS W=2000,window,2000,53034,10000,290.25,1276.0,0.5274
+environment_sweep,multi_breakpoint,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,53034,10000,308.82000000000005,1256.0,0.4111
+environment_sweep,multi_breakpoint,Baseline,Thompson Sampling,none,none,53035,10000,395.94,1178.0,0.2657
+environment_sweep,multi_breakpoint,D-UCB,D-UCB gamma=0.99,gamma,0.99,53035,10000,475.25,1125.0,0.2342
+environment_sweep,multi_breakpoint,SW-UCB,SW-UCB W=500,window,500,53035,10000,442.68,1133.0,0.2696
+environment_sweep,multi_breakpoint,DS-TS,DS-TS gamma=0.99,gamma,0.99,53035,10000,397.66,1215.0,0.3248
+environment_sweep,multi_breakpoint,SW-TS,SW-TS W=2000,window,2000,53035,10000,206.01999999999998,1390.0,0.627
+environment_sweep,multi_breakpoint,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,53035,10000,296.78999999999996,1294.0,0.484
+environment_sweep,multi_breakpoint,Baseline,Thompson Sampling,none,none,53036,10000,388.75,1191.0,0.422
+environment_sweep,multi_breakpoint,D-UCB,D-UCB gamma=0.99,gamma,0.99,53036,10000,481.68,1114.0,0.2292
+environment_sweep,multi_breakpoint,SW-UCB,SW-UCB W=500,window,500,53036,10000,443.32,1117.0,0.2694
+environment_sweep,multi_breakpoint,DS-TS,DS-TS gamma=0.99,gamma,0.99,53036,10000,419.20000000000005,1154.0,0.2816
+environment_sweep,multi_breakpoint,SW-TS,SW-TS W=2000,window,2000,53036,10000,276.97,1286.0,0.4766
+environment_sweep,multi_breakpoint,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,53036,10000,304.14,1255.0,0.3845
+environment_sweep,multi_breakpoint,Baseline,Thompson Sampling,none,none,53037,10000,397.8299999999999,1142.0,0.3847
+environment_sweep,multi_breakpoint,D-UCB,D-UCB gamma=0.99,gamma,0.99,53037,10000,479.85,1040.0,0.23
+environment_sweep,multi_breakpoint,SW-UCB,SW-UCB W=500,window,500,53037,10000,451.12,1075.0,0.2571
+environment_sweep,multi_breakpoint,DS-TS,DS-TS gamma=0.99,gamma,0.99,53037,10000,406.35,1131.0,0.3094
+environment_sweep,multi_breakpoint,SW-TS,SW-TS W=2000,window,2000,53037,10000,335.14,1198.0,0.4711
+environment_sweep,multi_breakpoint,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,53037,10000,314.48,1234.0,0.4107
+environment_sweep,multi_breakpoint,Baseline,Thompson Sampling,none,none,53038,10000,369.53000000000003,1182.0,0.4347
+environment_sweep,multi_breakpoint,D-UCB,D-UCB gamma=0.99,gamma,0.99,53038,10000,479.29,1109.0,0.2297
+environment_sweep,multi_breakpoint,SW-UCB,SW-UCB W=500,window,500,53038,10000,446.35,1115.0,0.2569
+environment_sweep,multi_breakpoint,DS-TS,DS-TS gamma=0.99,gamma,0.99,53038,10000,400.59000000000003,1163.0,0.305
+environment_sweep,multi_breakpoint,SW-TS,SW-TS W=2000,window,2000,53038,10000,283.33000000000004,1261.0,0.4862
+environment_sweep,multi_breakpoint,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,53038,10000,351.95,1200.0,0.3133
+environment_sweep,multi_breakpoint,Baseline,Thompson Sampling,none,none,53039,10000,482.46,1113.0,0.2076
+environment_sweep,multi_breakpoint,D-UCB,D-UCB gamma=0.99,gamma,0.99,53039,10000,478.24,1106.0,0.2339
+environment_sweep,multi_breakpoint,SW-UCB,SW-UCB W=500,window,500,53039,10000,440.6,1148.0,0.2627
+environment_sweep,multi_breakpoint,DS-TS,DS-TS gamma=0.99,gamma,0.99,53039,10000,408.74,1174.0,0.2942
+environment_sweep,multi_breakpoint,SW-TS,SW-TS W=2000,window,2000,53039,10000,285.36,1313.0,0.5001
+environment_sweep,multi_breakpoint,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,53039,10000,279.42,1313.0,0.4451
+environment_sweep,multi_breakpoint,Baseline,Thompson Sampling,none,none,53040,10000,536.48,1034.0,0.1935
+environment_sweep,multi_breakpoint,D-UCB,D-UCB gamma=0.99,gamma,0.99,53040,10000,485.41,1072.0,0.227
+environment_sweep,multi_breakpoint,SW-UCB,SW-UCB W=500,window,500,53040,10000,442.44,1124.0,0.2699
+environment_sweep,multi_breakpoint,DS-TS,DS-TS gamma=0.99,gamma,0.99,53040,10000,406.71000000000004,1151.0,0.2873
+environment_sweep,multi_breakpoint,SW-TS,SW-TS W=2000,window,2000,53040,10000,277.21999999999997,1273.0,0.4478
+environment_sweep,multi_breakpoint,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,53040,10000,294.75,1268.0,0.4361
+environment_sweep,multi_breakpoint,Baseline,Thompson Sampling,none,none,53041,10000,440.36,1138.0,0.2141
+environment_sweep,multi_breakpoint,D-UCB,D-UCB gamma=0.99,gamma,0.99,53041,10000,478.24,1106.0,0.2294
+environment_sweep,multi_breakpoint,SW-UCB,SW-UCB W=500,window,500,53041,10000,440.89,1136.0,0.2711
+environment_sweep,multi_breakpoint,DS-TS,DS-TS gamma=0.99,gamma,0.99,53041,10000,398.22,1193.0,0.3075
+environment_sweep,multi_breakpoint,SW-TS,SW-TS W=2000,window,2000,53041,10000,276.78,1292.0,0.531
+environment_sweep,multi_breakpoint,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,53041,10000,331.91999999999996,1241.0,0.3196
+environment_sweep,multi_breakpoint,Baseline,Thompson Sampling,none,none,53042,10000,502.65,1113.0,0.1215
+environment_sweep,multi_breakpoint,D-UCB,D-UCB gamma=0.99,gamma,0.99,53042,10000,475.65999999999997,1136.0,0.2339
+environment_sweep,multi_breakpoint,SW-UCB,SW-UCB W=500,window,500,53042,10000,449.59000000000003,1152.0,0.2576
+environment_sweep,multi_breakpoint,DS-TS,DS-TS gamma=0.99,gamma,0.99,53042,10000,409.6,1199.0,0.3049
+environment_sweep,multi_breakpoint,SW-TS,SW-TS W=2000,window,2000,53042,10000,320.95000000000005,1295.0,0.4141
+environment_sweep,multi_breakpoint,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,53042,10000,347.08,1257.0,0.3167
+environment_sweep,multi_breakpoint,Baseline,Thompson Sampling,none,none,53043,10000,405.44000000000005,1147.0,0.4587
+environment_sweep,multi_breakpoint,D-UCB,D-UCB gamma=0.99,gamma,0.99,53043,10000,478.31,1056.0,0.2325
+environment_sweep,multi_breakpoint,SW-UCB,SW-UCB W=500,window,500,53043,10000,441.09,1098.0,0.2744
+environment_sweep,multi_breakpoint,DS-TS,DS-TS gamma=0.99,gamma,0.99,53043,10000,425.0,1099.0,0.2831
+environment_sweep,multi_breakpoint,SW-TS,SW-TS W=2000,window,2000,53043,10000,254.05,1305.0,0.5611
+environment_sweep,multi_breakpoint,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,53043,10000,320.16,1229.0,0.4113
+environment_sweep,multi_breakpoint,Baseline,Thompson Sampling,none,none,53044,10000,418.11,1123.0,0.4033
+environment_sweep,multi_breakpoint,D-UCB,D-UCB gamma=0.99,gamma,0.99,53044,10000,482.87,1082.0,0.2274
+environment_sweep,multi_breakpoint,SW-UCB,SW-UCB W=500,window,500,53044,10000,454.96,1096.0,0.2448
+environment_sweep,multi_breakpoint,DS-TS,DS-TS gamma=0.99,gamma,0.99,53044,10000,403.16,1156.0,0.301
+environment_sweep,multi_breakpoint,SW-TS,SW-TS W=2000,window,2000,53044,10000,247.56,1296.0,0.4656
+environment_sweep,multi_breakpoint,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,53044,10000,313.85,1245.0,0.4318
+environment_sweep,multi_breakpoint,Baseline,Thompson Sampling,none,none,53045,10000,402.36,1172.0,0.397
+environment_sweep,multi_breakpoint,D-UCB,D-UCB gamma=0.99,gamma,0.99,53045,10000,477.56,1098.0,0.2279
+environment_sweep,multi_breakpoint,SW-UCB,SW-UCB W=500,window,500,53045,10000,428.58000000000004,1186.0,0.2831
+environment_sweep,multi_breakpoint,DS-TS,DS-TS gamma=0.99,gamma,0.99,53045,10000,419.0,1155.0,0.2823
+environment_sweep,multi_breakpoint,SW-TS,SW-TS W=2000,window,2000,53045,10000,263.89,1321.0,0.5363
+environment_sweep,multi_breakpoint,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,53045,10000,335.28,1254.0,0.4079
+environment_sweep,multi_breakpoint,Baseline,Thompson Sampling,none,none,53046,10000,397.04999999999995,1183.0,0.3135
+environment_sweep,multi_breakpoint,D-UCB,D-UCB gamma=0.99,gamma,0.99,53046,10000,477.23,1105.0,0.2318
+environment_sweep,multi_breakpoint,SW-UCB,SW-UCB W=500,window,500,53046,10000,450.69,1105.0,0.2606
+environment_sweep,multi_breakpoint,DS-TS,DS-TS gamma=0.99,gamma,0.99,53046,10000,413.30999999999995,1148.0,0.2799
+environment_sweep,multi_breakpoint,SW-TS,SW-TS W=2000,window,2000,53046,10000,232.72,1377.0,0.6026
+environment_sweep,multi_breakpoint,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,53046,10000,282.76,1321.0,0.4806
+environment_sweep,multi_breakpoint,Baseline,Thompson Sampling,none,none,53047,10000,409.97,1124.0,0.4183
+environment_sweep,multi_breakpoint,D-UCB,D-UCB gamma=0.99,gamma,0.99,53047,10000,481.56,1056.0,0.2267
+environment_sweep,multi_breakpoint,SW-UCB,SW-UCB W=500,window,500,53047,10000,446.79999999999995,1105.0,0.2607
+environment_sweep,multi_breakpoint,DS-TS,DS-TS gamma=0.99,gamma,0.99,53047,10000,406.78999999999996,1144.0,0.3066
+environment_sweep,multi_breakpoint,SW-TS,SW-TS W=2000,window,2000,53047,10000,236.28,1289.0,0.59
+environment_sweep,multi_breakpoint,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,53047,10000,324.05,1211.0,0.4322
+environment_sweep,multi_breakpoint,Baseline,Thompson Sampling,none,none,53048,10000,485.62,1016.0,0.3229
+environment_sweep,multi_breakpoint,D-UCB,D-UCB gamma=0.99,gamma,0.99,53048,10000,482.0,1055.0,0.2266
+environment_sweep,multi_breakpoint,SW-UCB,SW-UCB W=500,window,500,53048,10000,453.72,1085.0,0.2539
+environment_sweep,multi_breakpoint,DS-TS,DS-TS gamma=0.99,gamma,0.99,53048,10000,415.3,1104.0,0.2854
+environment_sweep,multi_breakpoint,SW-TS,SW-TS W=2000,window,2000,53048,10000,327.90999999999997,1188.0,0.4323
+environment_sweep,multi_breakpoint,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,53048,10000,330.65,1195.0,0.3368
+environment_sweep,multi_breakpoint,Baseline,Thompson Sampling,none,none,53049,10000,482.12,1079.0,0.2564
+environment_sweep,multi_breakpoint,D-UCB,D-UCB gamma=0.99,gamma,0.99,53049,10000,471.56,1120.0,0.2373
+environment_sweep,multi_breakpoint,SW-UCB,SW-UCB W=500,window,500,53049,10000,442.65999999999997,1131.0,0.2648
+environment_sweep,multi_breakpoint,DS-TS,DS-TS gamma=0.99,gamma,0.99,53049,10000,402.44,1156.0,0.3029
+environment_sweep,multi_breakpoint,SW-TS,SW-TS W=2000,window,2000,53049,10000,247.76,1319.0,0.574
+environment_sweep,multi_breakpoint,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,53049,10000,297.44,1263.0,0.4567
+environment_sweep,multi_breakpoint,Baseline,Thompson Sampling,none,none,53050,10000,415.73,1132.0,0.3235
+environment_sweep,multi_breakpoint,D-UCB,D-UCB gamma=0.99,gamma,0.99,53050,10000,478.13,1042.0,0.2322
+environment_sweep,multi_breakpoint,SW-UCB,SW-UCB W=500,window,500,53050,10000,448.86,1089.0,0.2576
+environment_sweep,multi_breakpoint,DS-TS,DS-TS gamma=0.99,gamma,0.99,53050,10000,397.73,1128.0,0.3076
+environment_sweep,multi_breakpoint,SW-TS,SW-TS W=2000,window,2000,53050,10000,257.84000000000003,1282.0,0.4664
+environment_sweep,multi_breakpoint,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,53050,10000,321.32,1229.0,0.3983
+environment_sweep,multi_breakpoint,Baseline,Thompson Sampling,none,none,53051,10000,495.98999999999995,1089.0,0.1643
+environment_sweep,multi_breakpoint,D-UCB,D-UCB gamma=0.99,gamma,0.99,53051,10000,475.45,1123.0,0.229
+environment_sweep,multi_breakpoint,SW-UCB,SW-UCB W=500,window,500,53051,10000,435.43,1157.0,0.2749
+environment_sweep,multi_breakpoint,DS-TS,DS-TS gamma=0.99,gamma,0.99,53051,10000,406.44,1178.0,0.2995
+environment_sweep,multi_breakpoint,SW-TS,SW-TS W=2000,window,2000,53051,10000,256.87,1352.0,0.5072
+environment_sweep,multi_breakpoint,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,53051,10000,314.1,1279.0,0.4434
+environment_sweep,multi_breakpoint,Baseline,Thompson Sampling,none,none,53052,10000,391.43999999999994,1166.0,0.3001
+environment_sweep,multi_breakpoint,D-UCB,D-UCB gamma=0.99,gamma,0.99,53052,10000,475.57,1089.0,0.2319
+environment_sweep,multi_breakpoint,SW-UCB,SW-UCB W=500,window,500,53052,10000,442.15,1120.0,0.26
+environment_sweep,multi_breakpoint,DS-TS,DS-TS gamma=0.99,gamma,0.99,53052,10000,423.65,1131.0,0.2786
+environment_sweep,multi_breakpoint,SW-TS,SW-TS W=2000,window,2000,53052,10000,327.11,1222.0,0.4821
+environment_sweep,multi_breakpoint,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,53052,10000,295.57,1269.0,0.4363
+environment_sweep,multi_breakpoint,Baseline,Thompson Sampling,none,none,53053,10000,475.71,1055.0,0.211
+environment_sweep,multi_breakpoint,D-UCB,D-UCB gamma=0.99,gamma,0.99,53053,10000,476.24,1061.0,0.2293
+environment_sweep,multi_breakpoint,SW-UCB,SW-UCB W=500,window,500,53053,10000,461.45,1059.0,0.2384
+environment_sweep,multi_breakpoint,DS-TS,DS-TS gamma=0.99,gamma,0.99,53053,10000,405.38,1149.0,0.2933
+environment_sweep,multi_breakpoint,SW-TS,SW-TS W=2000,window,2000,53053,10000,305.81,1217.0,0.4892
+environment_sweep,multi_breakpoint,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,53053,10000,277.7,1260.0,0.4549
+environment_sweep,multi_breakpoint,Baseline,Thompson Sampling,none,none,53054,10000,418.02000000000004,1169.0,0.3202
+environment_sweep,multi_breakpoint,D-UCB,D-UCB gamma=0.99,gamma,0.99,53054,10000,473.97,1112.0,0.2394
+environment_sweep,multi_breakpoint,SW-UCB,SW-UCB W=500,window,500,53054,10000,453.08,1108.0,0.2486
+environment_sweep,multi_breakpoint,DS-TS,DS-TS gamma=0.99,gamma,0.99,53054,10000,412.62,1182.0,0.2901
+environment_sweep,multi_breakpoint,SW-TS,SW-TS W=2000,window,2000,53054,10000,275.19,1320.0,0.4685
+environment_sweep,multi_breakpoint,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,53054,10000,302.46,1282.0,0.4404
+environment_sweep,multi_breakpoint,Baseline,Thompson Sampling,none,none,53055,10000,416.3800000000001,1166.0,0.4083
+environment_sweep,multi_breakpoint,D-UCB,D-UCB gamma=0.99,gamma,0.99,53055,10000,480.28,1080.0,0.2265
+environment_sweep,multi_breakpoint,SW-UCB,SW-UCB W=500,window,500,53055,10000,446.39,1109.0,0.2572
+environment_sweep,multi_breakpoint,DS-TS,DS-TS gamma=0.99,gamma,0.99,53055,10000,412.05999999999995,1145.0,0.2886
+environment_sweep,multi_breakpoint,SW-TS,SW-TS W=2000,window,2000,53055,10000,265.83,1290.0,0.5159
+environment_sweep,multi_breakpoint,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,53055,10000,306.93,1233.0,0.4363
+environment_sweep,small_gap_reversal,Baseline,Thompson Sampling,none,none,54026,10000,163.08000000000007,1219.0,0.368
+environment_sweep,small_gap_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,54026,10000,194.86000000000013,1194.0,0.2091
+environment_sweep,small_gap_reversal,SW-UCB,SW-UCB W=500,window,500,54026,10000,188.4600000000001,1191.0,0.2257
+environment_sweep,small_gap_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,54026,10000,181.0300000000001,1193.0,0.2421
+environment_sweep,small_gap_reversal,SW-TS,SW-TS W=2000,window,2000,54026,10000,123.70000000000007,1267.0,0.4546
+environment_sweep,small_gap_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,54026,10000,166.8200000000001,1209.0,0.3025
+environment_sweep,small_gap_reversal,Baseline,Thompson Sampling,none,none,54027,10000,188.35000000000005,1246.0,0.3912
+environment_sweep,small_gap_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,54027,10000,192.4500000000001,1240.0,0.2117
+environment_sweep,small_gap_reversal,SW-UCB,SW-UCB W=500,window,500,54027,10000,188.7500000000001,1244.0,0.2272
+environment_sweep,small_gap_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,54027,10000,183.8200000000001,1261.0,0.2367
+environment_sweep,small_gap_reversal,SW-TS,SW-TS W=2000,window,2000,54027,10000,114.94000000000004,1314.0,0.508
+environment_sweep,small_gap_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,54027,10000,159.88000000000008,1272.0,0.2775
+environment_sweep,small_gap_reversal,Baseline,Thompson Sampling,none,none,54028,10000,177.62000000000006,1236.0,0.3641
+environment_sweep,small_gap_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,54028,10000,195.0900000000001,1189.0,0.2133
+environment_sweep,small_gap_reversal,SW-UCB,SW-UCB W=500,window,500,54028,10000,184.9300000000001,1215.0,0.2247
+environment_sweep,small_gap_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,54028,10000,183.6400000000001,1207.0,0.2389
+environment_sweep,small_gap_reversal,SW-TS,SW-TS W=2000,window,2000,54028,10000,126.7400000000001,1275.0,0.3988
+environment_sweep,small_gap_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,54028,10000,152.86000000000007,1246.0,0.3153
+environment_sweep,small_gap_reversal,Baseline,Thompson Sampling,none,none,54029,10000,198.75000000000009,1190.0,0.2492
+environment_sweep,small_gap_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,54029,10000,195.84000000000012,1201.0,0.2086
+environment_sweep,small_gap_reversal,SW-UCB,SW-UCB W=500,window,500,54029,10000,194.11000000000007,1199.0,0.2026
+environment_sweep,small_gap_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,54029,10000,189.7500000000001,1222.0,0.2201
+environment_sweep,small_gap_reversal,SW-TS,SW-TS W=2000,window,2000,54029,10000,150.2100000000001,1244.0,0.3075
+environment_sweep,small_gap_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,54029,10000,154.10000000000008,1255.0,0.2912
+environment_sweep,small_gap_reversal,Baseline,Thompson Sampling,none,none,54030,10000,180.0500000000001,1215.0,0.1692
+environment_sweep,small_gap_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,54030,10000,194.72000000000008,1197.0,0.2105
+environment_sweep,small_gap_reversal,SW-UCB,SW-UCB W=500,window,500,54030,10000,188.35000000000008,1213.0,0.2238
+environment_sweep,small_gap_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,54030,10000,188.4500000000001,1210.0,0.2276
+environment_sweep,small_gap_reversal,SW-TS,SW-TS W=2000,window,2000,54030,10000,132.17000000000007,1259.0,0.3578
+environment_sweep,small_gap_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,54030,10000,147.5500000000001,1248.0,0.3085
+environment_sweep,small_gap_reversal,Baseline,Thompson Sampling,none,none,54031,10000,195.25000000000006,1141.0,0.388
+environment_sweep,small_gap_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,54031,10000,196.1700000000001,1121.0,0.2048
+environment_sweep,small_gap_reversal,SW-UCB,SW-UCB W=500,window,500,54031,10000,190.7700000000001,1146.0,0.2149
+environment_sweep,small_gap_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,54031,10000,181.7800000000001,1136.0,0.2446
+environment_sweep,small_gap_reversal,SW-TS,SW-TS W=2000,window,2000,54031,10000,118.09000000000006,1211.0,0.5055
+environment_sweep,small_gap_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,54031,10000,156.25000000000009,1172.0,0.3235
+environment_sweep,small_gap_reversal,Baseline,Thompson Sampling,none,none,54032,10000,176.03000000000011,1208.0,0.2824
+environment_sweep,small_gap_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,54032,10000,193.7500000000001,1194.0,0.2101
+environment_sweep,small_gap_reversal,SW-UCB,SW-UCB W=500,window,500,54032,10000,186.9000000000001,1200.0,0.2215
+environment_sweep,small_gap_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,54032,10000,194.2500000000001,1174.0,0.2051
+environment_sweep,small_gap_reversal,SW-TS,SW-TS W=2000,window,2000,54032,10000,166.15000000000015,1210.0,0.2354
+environment_sweep,small_gap_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,54032,10000,176.5000000000001,1197.0,0.245
+environment_sweep,small_gap_reversal,Baseline,Thompson Sampling,none,none,54033,10000,182.69000000000008,1209.0,0.256
+environment_sweep,small_gap_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,54033,10000,194.7600000000001,1203.0,0.2053
+environment_sweep,small_gap_reversal,SW-UCB,SW-UCB W=500,window,500,54033,10000,190.4000000000001,1192.0,0.214
+environment_sweep,small_gap_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,54033,10000,184.1700000000001,1225.0,0.2238
+environment_sweep,small_gap_reversal,SW-TS,SW-TS W=2000,window,2000,54033,10000,154.85000000000008,1239.0,0.3398
+environment_sweep,small_gap_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,54033,10000,166.24000000000007,1223.0,0.2984
+environment_sweep,small_gap_reversal,Baseline,Thompson Sampling,none,none,54034,10000,200.66000000000014,1192.0,0.0512
+environment_sweep,small_gap_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,54034,10000,193.0800000000001,1185.0,0.2178
+environment_sweep,small_gap_reversal,SW-UCB,SW-UCB W=500,window,500,54034,10000,186.2700000000001,1206.0,0.2232
+environment_sweep,small_gap_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,54034,10000,178.4600000000001,1198.0,0.2532
+environment_sweep,small_gap_reversal,SW-TS,SW-TS W=2000,window,2000,54034,10000,177.2400000000001,1203.0,0.2396
+environment_sweep,small_gap_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,54034,10000,168.5100000000001,1209.0,0.2414
+environment_sweep,small_gap_reversal,Baseline,Thompson Sampling,none,none,54035,10000,153.2000000000001,1271.0,0.4124
+environment_sweep,small_gap_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,54035,10000,193.7300000000001,1219.0,0.2148
+environment_sweep,small_gap_reversal,SW-UCB,SW-UCB W=500,window,500,54035,10000,186.7700000000001,1248.0,0.227
+environment_sweep,small_gap_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,54035,10000,177.6300000000001,1259.0,0.2527
+environment_sweep,small_gap_reversal,SW-TS,SW-TS W=2000,window,2000,54035,10000,98.13000000000005,1352.0,0.4523
+environment_sweep,small_gap_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,54035,10000,167.3300000000001,1264.0,0.2887
+environment_sweep,small_gap_reversal,Baseline,Thompson Sampling,none,none,54036,10000,180.8400000000001,1185.0,0.2429
+environment_sweep,small_gap_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,54036,10000,192.7500000000001,1187.0,0.2127
+environment_sweep,small_gap_reversal,SW-UCB,SW-UCB W=500,window,500,54036,10000,189.8000000000001,1214.0,0.232
+environment_sweep,small_gap_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,54036,10000,172.54000000000008,1225.0,0.2609
+environment_sweep,small_gap_reversal,SW-TS,SW-TS W=2000,window,2000,54036,10000,127.69000000000008,1271.0,0.3385
+environment_sweep,small_gap_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,54036,10000,144.30000000000007,1255.0,0.3513
+environment_sweep,small_gap_reversal,Baseline,Thompson Sampling,none,none,54037,10000,126.15000000000003,1324.0,0.5835
+environment_sweep,small_gap_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,54037,10000,194.7000000000001,1259.0,0.208
+environment_sweep,small_gap_reversal,SW-UCB,SW-UCB W=500,window,500,54037,10000,191.0200000000001,1239.0,0.2178
+environment_sweep,small_gap_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,54037,10000,177.3900000000001,1264.0,0.2604
+environment_sweep,small_gap_reversal,SW-TS,SW-TS W=2000,window,2000,54037,10000,130.9600000000001,1310.0,0.2945
+environment_sweep,small_gap_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,54037,10000,158.8800000000001,1269.0,0.3037
+environment_sweep,small_gap_reversal,Baseline,Thompson Sampling,none,none,54038,10000,172.81000000000012,1246.0,0.2235
+environment_sweep,small_gap_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,54038,10000,193.5000000000001,1225.0,0.2161
+environment_sweep,small_gap_reversal,SW-UCB,SW-UCB W=500,window,500,54038,10000,188.4500000000001,1224.0,0.2211
+environment_sweep,small_gap_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,54038,10000,180.18000000000012,1251.0,0.2262
+environment_sweep,small_gap_reversal,SW-TS,SW-TS W=2000,window,2000,54038,10000,120.06000000000009,1291.0,0.3581
+environment_sweep,small_gap_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,54038,10000,142.3000000000001,1278.0,0.3814
+environment_sweep,small_gap_reversal,Baseline,Thompson Sampling,none,none,54039,10000,165.99000000000007,1205.0,0.2877
+environment_sweep,small_gap_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,54039,10000,192.9400000000001,1176.0,0.2175
+environment_sweep,small_gap_reversal,SW-UCB,SW-UCB W=500,window,500,54039,10000,186.4500000000001,1185.0,0.2286
+environment_sweep,small_gap_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,54039,10000,188.7900000000001,1178.0,0.2341
+environment_sweep,small_gap_reversal,SW-TS,SW-TS W=2000,window,2000,54039,10000,160.6800000000001,1212.0,0.1656
+environment_sweep,small_gap_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,54039,10000,187.41000000000008,1184.0,0.1872
+environment_sweep,small_gap_reversal,Baseline,Thompson Sampling,none,none,54040,10000,174.5300000000001,1215.0,0.2712
+environment_sweep,small_gap_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,54040,10000,192.8000000000001,1195.0,0.2186
+environment_sweep,small_gap_reversal,SW-UCB,SW-UCB W=500,window,500,54040,10000,187.1400000000001,1220.0,0.2317
+environment_sweep,small_gap_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,54040,10000,176.8200000000001,1212.0,0.2544
+environment_sweep,small_gap_reversal,SW-TS,SW-TS W=2000,window,2000,54040,10000,117.42000000000007,1270.0,0.4143
+environment_sweep,small_gap_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,54040,10000,160.10000000000008,1213.0,0.2546
+environment_sweep,small_gap_reversal,Baseline,Thompson Sampling,none,none,54041,10000,141.31000000000006,1255.0,0.4266
+environment_sweep,small_gap_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,54041,10000,196.8900000000001,1195.0,0.2131
+environment_sweep,small_gap_reversal,SW-UCB,SW-UCB W=500,window,500,54041,10000,186.81000000000012,1209.0,0.2355
+environment_sweep,small_gap_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,54041,10000,183.8900000000001,1206.0,0.2392
+environment_sweep,small_gap_reversal,SW-TS,SW-TS W=2000,window,2000,54041,10000,120.44000000000008,1278.0,0.3886
+environment_sweep,small_gap_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,54041,10000,153.7800000000001,1251.0,0.3118
+environment_sweep,small_gap_reversal,Baseline,Thompson Sampling,none,none,54042,10000,139.66000000000008,1241.0,0.3649
+environment_sweep,small_gap_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,54042,10000,194.4400000000001,1205.0,0.2082
+environment_sweep,small_gap_reversal,SW-UCB,SW-UCB W=500,window,500,54042,10000,186.0900000000001,1197.0,0.2265
+environment_sweep,small_gap_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,54042,10000,175.14000000000007,1220.0,0.258
+environment_sweep,small_gap_reversal,SW-TS,SW-TS W=2000,window,2000,54042,10000,128.9000000000001,1256.0,0.4382
+environment_sweep,small_gap_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,54042,10000,151.79000000000008,1223.0,0.3286
+environment_sweep,small_gap_reversal,Baseline,Thompson Sampling,none,none,54043,10000,207.2700000000001,1182.0,0.1724
+environment_sweep,small_gap_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,54043,10000,193.1900000000001,1208.0,0.2084
+environment_sweep,small_gap_reversal,SW-UCB,SW-UCB W=500,window,500,54043,10000,187.0400000000001,1217.0,0.2197
+environment_sweep,small_gap_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,54043,10000,183.6500000000001,1224.0,0.2466
+environment_sweep,small_gap_reversal,SW-TS,SW-TS W=2000,window,2000,54043,10000,122.33000000000007,1314.0,0.4328
+environment_sweep,small_gap_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,54043,10000,159.3200000000001,1252.0,0.3139
+environment_sweep,small_gap_reversal,Baseline,Thompson Sampling,none,none,54044,10000,127.81000000000009,1255.0,0.4439
+environment_sweep,small_gap_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,54044,10000,196.5900000000001,1163.0,0.2048
+environment_sweep,small_gap_reversal,SW-UCB,SW-UCB W=500,window,500,54044,10000,191.37000000000012,1192.0,0.2117
+environment_sweep,small_gap_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,54044,10000,182.1600000000001,1201.0,0.236
+environment_sweep,small_gap_reversal,SW-TS,SW-TS W=2000,window,2000,54044,10000,134.45000000000007,1245.0,0.325
+environment_sweep,small_gap_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,54044,10000,173.12000000000006,1204.0,0.2593
+environment_sweep,small_gap_reversal,Baseline,Thompson Sampling,none,none,54045,10000,160.6800000000001,1248.0,0.2136
+environment_sweep,small_gap_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,54045,10000,193.7300000000001,1226.0,0.2084
+environment_sweep,small_gap_reversal,SW-UCB,SW-UCB W=500,window,500,54045,10000,189.2000000000001,1215.0,0.2252
+environment_sweep,small_gap_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,54045,10000,175.24000000000012,1250.0,0.2577
+environment_sweep,small_gap_reversal,SW-TS,SW-TS W=2000,window,2000,54045,10000,126.15000000000009,1297.0,0.4372
+environment_sweep,small_gap_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,54045,10000,156.0500000000001,1261.0,0.3045
+environment_sweep,small_gap_reversal,Baseline,Thompson Sampling,none,none,54046,10000,185.24000000000012,1165.0,0.1797
+environment_sweep,small_gap_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,54046,10000,193.7100000000001,1169.0,0.2099
+environment_sweep,small_gap_reversal,SW-UCB,SW-UCB W=500,window,500,54046,10000,187.2400000000001,1172.0,0.2318
+environment_sweep,small_gap_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,54046,10000,184.1500000000001,1166.0,0.2467
+environment_sweep,small_gap_reversal,SW-TS,SW-TS W=2000,window,2000,54046,10000,128.6800000000001,1223.0,0.3735
+environment_sweep,small_gap_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,54046,10000,168.1900000000001,1202.0,0.2495
+environment_sweep,small_gap_reversal,Baseline,Thompson Sampling,none,none,54047,10000,212.87000000000012,1159.0,0.0526
+environment_sweep,small_gap_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,54047,10000,194.5000000000001,1198.0,0.2125
+environment_sweep,small_gap_reversal,SW-UCB,SW-UCB W=500,window,500,54047,10000,187.41000000000008,1192.0,0.2278
+environment_sweep,small_gap_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,54047,10000,180.29000000000008,1197.0,0.2617
+environment_sweep,small_gap_reversal,SW-TS,SW-TS W=2000,window,2000,54047,10000,121.68000000000006,1262.0,0.378
+environment_sweep,small_gap_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,54047,10000,150.67000000000007,1231.0,0.3044
+environment_sweep,small_gap_reversal,Baseline,Thompson Sampling,none,none,54048,10000,166.29000000000008,1267.0,0.1905
+environment_sweep,small_gap_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,54048,10000,194.0000000000001,1220.0,0.216
+environment_sweep,small_gap_reversal,SW-UCB,SW-UCB W=500,window,500,54048,10000,191.4000000000001,1213.0,0.2112
+environment_sweep,small_gap_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,54048,10000,182.0600000000001,1239.0,0.2285
+environment_sweep,small_gap_reversal,SW-TS,SW-TS W=2000,window,2000,54048,10000,138.4300000000001,1285.0,0.3033
+environment_sweep,small_gap_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,54048,10000,147.82000000000008,1279.0,0.3574
+environment_sweep,small_gap_reversal,Baseline,Thompson Sampling,none,none,54049,10000,168.5800000000001,1240.0,0.426
+environment_sweep,small_gap_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,54049,10000,195.72000000000008,1206.0,0.211
+environment_sweep,small_gap_reversal,SW-UCB,SW-UCB W=500,window,500,54049,10000,182.8700000000001,1220.0,0.2356
+environment_sweep,small_gap_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,54049,10000,172.9200000000001,1228.0,0.2688
+environment_sweep,small_gap_reversal,SW-TS,SW-TS W=2000,window,2000,54049,10000,120.90000000000006,1276.0,0.4268
+environment_sweep,small_gap_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,54049,10000,154.4300000000001,1242.0,0.3266
+environment_sweep,small_gap_reversal,Baseline,Thompson Sampling,none,none,54050,10000,141.19000000000005,1288.0,0.4597
+environment_sweep,small_gap_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,54050,10000,194.5400000000001,1236.0,0.2131
+environment_sweep,small_gap_reversal,SW-UCB,SW-UCB W=500,window,500,54050,10000,194.5500000000001,1234.0,0.2052
+environment_sweep,small_gap_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,54050,10000,180.5600000000001,1245.0,0.2267
+environment_sweep,small_gap_reversal,SW-TS,SW-TS W=2000,window,2000,54050,10000,111.75000000000006,1320.0,0.4956
+environment_sweep,small_gap_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,54050,10000,149.16000000000008,1280.0,0.3373
+environment_sweep,small_gap_reversal,Baseline,Thompson Sampling,none,none,54051,10000,214.96000000000012,1175.0,0.0455
+environment_sweep,small_gap_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,54051,10000,195.1700000000001,1201.0,0.2113
+environment_sweep,small_gap_reversal,SW-UCB,SW-UCB W=500,window,500,54051,10000,189.85000000000008,1194.0,0.2234
+environment_sweep,small_gap_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,54051,10000,190.9900000000001,1196.0,0.2229
+environment_sweep,small_gap_reversal,SW-TS,SW-TS W=2000,window,2000,54051,10000,140.3200000000001,1266.0,0.2467
+environment_sweep,small_gap_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,54051,10000,168.8200000000001,1217.0,0.2316
+environment_sweep,small_gap_reversal,Baseline,Thompson Sampling,none,none,54052,10000,124.06000000000004,1252.0,0.4494
+environment_sweep,small_gap_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,54052,10000,193.7000000000001,1195.0,0.2091
+environment_sweep,small_gap_reversal,SW-UCB,SW-UCB W=500,window,500,54052,10000,190.0100000000001,1215.0,0.2245
+environment_sweep,small_gap_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,54052,10000,175.4400000000001,1204.0,0.2474
+environment_sweep,small_gap_reversal,SW-TS,SW-TS W=2000,window,2000,54052,10000,114.39000000000007,1273.0,0.426
+environment_sweep,small_gap_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,54052,10000,159.0900000000001,1230.0,0.2847
+environment_sweep,small_gap_reversal,Baseline,Thompson Sampling,none,none,54053,10000,178.67000000000007,1237.0,0.3352
+environment_sweep,small_gap_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,54053,10000,193.8100000000001,1219.0,0.2165
+environment_sweep,small_gap_reversal,SW-UCB,SW-UCB W=500,window,500,54053,10000,189.5200000000001,1224.0,0.2201
+environment_sweep,small_gap_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,54053,10000,183.4700000000001,1230.0,0.2542
+environment_sweep,small_gap_reversal,SW-TS,SW-TS W=2000,window,2000,54053,10000,141.25000000000009,1280.0,0.4292
+environment_sweep,small_gap_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,54053,10000,145.05000000000007,1265.0,0.3653
+environment_sweep,small_gap_reversal,Baseline,Thompson Sampling,none,none,54054,10000,219.04000000000005,1218.0,0.3535
+environment_sweep,small_gap_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,54054,10000,195.5700000000001,1236.0,0.2083
+environment_sweep,small_gap_reversal,SW-UCB,SW-UCB W=500,window,500,54054,10000,192.6200000000001,1245.0,0.2119
+environment_sweep,small_gap_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,54054,10000,186.2700000000001,1249.0,0.2155
+environment_sweep,small_gap_reversal,SW-TS,SW-TS W=2000,window,2000,54054,10000,97.95000000000005,1329.0,0.5743
+environment_sweep,small_gap_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,54054,10000,155.9000000000001,1265.0,0.3025
+environment_sweep,small_gap_reversal,Baseline,Thompson Sampling,none,none,54055,10000,181.92000000000004,1234.0,0.4641
+environment_sweep,small_gap_reversal,D-UCB,D-UCB gamma=0.99,gamma,0.99,54055,10000,196.1300000000001,1200.0,0.2115
+environment_sweep,small_gap_reversal,SW-UCB,SW-UCB W=500,window,500,54055,10000,188.9200000000001,1239.0,0.2316
+environment_sweep,small_gap_reversal,DS-TS,DS-TS gamma=0.99,gamma,0.99,54055,10000,175.8800000000001,1211.0,0.2473
+environment_sweep,small_gap_reversal,SW-TS,SW-TS W=2000,window,2000,54055,10000,116.55000000000007,1286.0,0.498
+environment_sweep,small_gap_reversal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,54055,10000,152.9500000000001,1260.0,0.3334
+environment_sweep,smooth_sinusoidal,Baseline,Thompson Sampling,none,none,55026,10000,318.13950510541065,1188.0,0.1691
+environment_sweep,smooth_sinusoidal,D-UCB,D-UCB gamma=0.99,gamma,0.99,55026,10000,325.15603666435027,1200.0,0.2162
+environment_sweep,smooth_sinusoidal,SW-UCB,SW-UCB W=500,window,500,55026,10000,301.7975387036746,1212.0,0.2544
+environment_sweep,smooth_sinusoidal,DS-TS,DS-TS gamma=0.99,gamma,0.99,55026,10000,277.45268312784594,1245.0,0.2744
+environment_sweep,smooth_sinusoidal,SW-TS,SW-TS W=2000,window,2000,55026,10000,239.4771436341358,1279.0,0.2469
+environment_sweep,smooth_sinusoidal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,55026,10000,215.54282731416362,1308.0,0.351
+environment_sweep,smooth_sinusoidal,Baseline,Thompson Sampling,none,none,55027,10000,288.9278082182334,1238.0,0.2004
+environment_sweep,smooth_sinusoidal,D-UCB,D-UCB gamma=0.99,gamma,0.99,55027,10000,322.6377363176295,1199.0,0.2303
+environment_sweep,smooth_sinusoidal,SW-UCB,SW-UCB W=500,window,500,55027,10000,310.83122986072647,1223.0,0.2398
+environment_sweep,smooth_sinusoidal,DS-TS,DS-TS gamma=0.99,gamma,0.99,55027,10000,278.7425342464319,1241.0,0.2433
+environment_sweep,smooth_sinusoidal,SW-TS,SW-TS W=2000,window,2000,55027,10000,164.9133689868313,1355.0,0.4312
+environment_sweep,smooth_sinusoidal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,55027,10000,204.82746103603534,1321.0,0.3757
+environment_sweep,smooth_sinusoidal,Baseline,Thompson Sampling,none,none,55028,10000,321.42814920981016,1128.0,0.1776
+environment_sweep,smooth_sinusoidal,D-UCB,D-UCB gamma=0.99,gamma,0.99,55028,10000,323.0444189778271,1156.0,0.2194
+environment_sweep,smooth_sinusoidal,SW-UCB,SW-UCB W=500,window,500,55028,10000,306.2146838041542,1163.0,0.2428
+environment_sweep,smooth_sinusoidal,DS-TS,DS-TS gamma=0.99,gamma,0.99,55028,10000,292.5427117790897,1184.0,0.2623
+environment_sweep,smooth_sinusoidal,SW-TS,SW-TS W=2000,window,2000,55028,10000,223.5363548744117,1232.0,0.303
+environment_sweep,smooth_sinusoidal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,55028,10000,215.35977316801632,1245.0,0.3542
+environment_sweep,smooth_sinusoidal,Baseline,Thompson Sampling,none,none,55029,10000,250.01581965437418,1230.0,0.305
+environment_sweep,smooth_sinusoidal,D-UCB,D-UCB gamma=0.99,gamma,0.99,55029,10000,323.0034905348998,1146.0,0.2199
+environment_sweep,smooth_sinusoidal,SW-UCB,SW-UCB W=500,window,500,55029,10000,304.37727160813694,1182.0,0.2331
+environment_sweep,smooth_sinusoidal,DS-TS,DS-TS gamma=0.99,gamma,0.99,55029,10000,286.23720475884136,1222.0,0.2571
+environment_sweep,smooth_sinusoidal,SW-TS,SW-TS W=2000,window,2000,55029,10000,209.31301998548446,1286.0,0.3449
+environment_sweep,smooth_sinusoidal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,55029,10000,222.6842672009186,1274.0,0.3618
+environment_sweep,smooth_sinusoidal,Baseline,Thompson Sampling,none,none,55030,10000,253.69384087416137,1212.0,0.2961
+environment_sweep,smooth_sinusoidal,D-UCB,D-UCB gamma=0.99,gamma,0.99,55030,10000,324.67183168550696,1109.0,0.2166
+environment_sweep,smooth_sinusoidal,SW-UCB,SW-UCB W=500,window,500,55030,10000,297.7583325764381,1152.0,0.2518
+environment_sweep,smooth_sinusoidal,DS-TS,DS-TS gamma=0.99,gamma,0.99,55030,10000,283.0265868859497,1179.0,0.2682
+environment_sweep,smooth_sinusoidal,SW-TS,SW-TS W=2000,window,2000,55030,10000,234.8557076213187,1213.0,0.2824
+environment_sweep,smooth_sinusoidal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,55030,10000,231.5205001312271,1225.0,0.3308
+environment_sweep,smooth_sinusoidal,Baseline,Thompson Sampling,none,none,55031,10000,266.51954439578515,1275.0,0.2737
+environment_sweep,smooth_sinusoidal,D-UCB,D-UCB gamma=0.99,gamma,0.99,55031,10000,319.78935635639067,1227.0,0.2212
+environment_sweep,smooth_sinusoidal,SW-UCB,SW-UCB W=500,window,500,55031,10000,309.41238586553607,1241.0,0.2417
+environment_sweep,smooth_sinusoidal,DS-TS,DS-TS gamma=0.99,gamma,0.99,55031,10000,296.5045194450511,1239.0,0.2386
+environment_sweep,smooth_sinusoidal,SW-TS,SW-TS W=2000,window,2000,55031,10000,169.9895756015144,1365.0,0.3959
+environment_sweep,smooth_sinusoidal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,55031,10000,230.47262046029533,1309.0,0.3416
+environment_sweep,smooth_sinusoidal,Baseline,Thompson Sampling,none,none,55032,10000,246.51440564053567,1205.0,0.2977
+environment_sweep,smooth_sinusoidal,D-UCB,D-UCB gamma=0.99,gamma,0.99,55032,10000,323.3135431975196,1130.0,0.218
+environment_sweep,smooth_sinusoidal,SW-UCB,SW-UCB W=500,window,500,55032,10000,299.91142781769764,1152.0,0.2426
+environment_sweep,smooth_sinusoidal,DS-TS,DS-TS gamma=0.99,gamma,0.99,55032,10000,286.2574143197304,1160.0,0.2471
+environment_sweep,smooth_sinusoidal,SW-TS,SW-TS W=2000,window,2000,55032,10000,207.58278968685823,1251.0,0.3521
+environment_sweep,smooth_sinusoidal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,55032,10000,209.85984591355864,1257.0,0.3754
+environment_sweep,smooth_sinusoidal,Baseline,Thompson Sampling,none,none,55033,10000,327.5765437591254,1187.0,0.1979
+environment_sweep,smooth_sinusoidal,D-UCB,D-UCB gamma=0.99,gamma,0.99,55033,10000,321.9788833238998,1218.0,0.2202
+environment_sweep,smooth_sinusoidal,SW-UCB,SW-UCB W=500,window,500,55033,10000,300.399315552354,1224.0,0.2421
+environment_sweep,smooth_sinusoidal,DS-TS,DS-TS gamma=0.99,gamma,0.99,55033,10000,284.78816682931097,1228.0,0.2594
+environment_sweep,smooth_sinusoidal,SW-TS,SW-TS W=2000,window,2000,55033,10000,247.86587390588494,1285.0,0.2593
+environment_sweep,smooth_sinusoidal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,55033,10000,208.74219578055073,1321.0,0.3555
+environment_sweep,smooth_sinusoidal,Baseline,Thompson Sampling,none,none,55034,10000,254.0655830908137,1187.0,0.2984
+environment_sweep,smooth_sinusoidal,D-UCB,D-UCB gamma=0.99,gamma,0.99,55034,10000,321.99252107516776,1114.0,0.2189
+environment_sweep,smooth_sinusoidal,SW-UCB,SW-UCB W=500,window,500,55034,10000,302.83013986044807,1151.0,0.2378
+environment_sweep,smooth_sinusoidal,DS-TS,DS-TS gamma=0.99,gamma,0.99,55034,10000,289.171414631639,1163.0,0.223
+environment_sweep,smooth_sinusoidal,SW-TS,SW-TS W=2000,window,2000,55034,10000,225.18285488898636,1216.0,0.2956
+environment_sweep,smooth_sinusoidal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,55034,10000,250.16223790319037,1191.0,0.2876
+environment_sweep,smooth_sinusoidal,Baseline,Thompson Sampling,none,none,55035,10000,241.9549974092238,1227.0,0.297
+environment_sweep,smooth_sinusoidal,D-UCB,D-UCB gamma=0.99,gamma,0.99,55035,10000,322.6225250709566,1153.0,0.218
+environment_sweep,smooth_sinusoidal,SW-UCB,SW-UCB W=500,window,500,55035,10000,311.97239446462737,1152.0,0.2278
+environment_sweep,smooth_sinusoidal,DS-TS,DS-TS gamma=0.99,gamma,0.99,55035,10000,280.4752796161281,1179.0,0.2755
+environment_sweep,smooth_sinusoidal,SW-TS,SW-TS W=2000,window,2000,55035,10000,193.14261463289085,1269.0,0.3926
+environment_sweep,smooth_sinusoidal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,55035,10000,231.946130793113,1235.0,0.3338
+environment_sweep,smooth_sinusoidal,Baseline,Thompson Sampling,none,none,55036,10000,270.36271258962097,1243.0,0.2236
+environment_sweep,smooth_sinusoidal,D-UCB,D-UCB gamma=0.99,gamma,0.99,55036,10000,320.80992906318363,1194.0,0.2191
+environment_sweep,smooth_sinusoidal,SW-UCB,SW-UCB W=500,window,500,55036,10000,300.8645303417709,1197.0,0.2462
+environment_sweep,smooth_sinusoidal,DS-TS,DS-TS gamma=0.99,gamma,0.99,55036,10000,290.96670048830225,1216.0,0.2684
+environment_sweep,smooth_sinusoidal,SW-TS,SW-TS W=2000,window,2000,55036,10000,204.51169520755226,1287.0,0.3242
+environment_sweep,smooth_sinusoidal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,55036,10000,253.06683950168252,1243.0,0.2864
+environment_sweep,smooth_sinusoidal,Baseline,Thompson Sampling,none,none,55037,10000,297.661758762648,1188.0,0.2131
+environment_sweep,smooth_sinusoidal,D-UCB,D-UCB gamma=0.99,gamma,0.99,55037,10000,323.9968250961913,1179.0,0.2199
+environment_sweep,smooth_sinusoidal,SW-UCB,SW-UCB W=500,window,500,55037,10000,301.09348538294137,1195.0,0.2394
+environment_sweep,smooth_sinusoidal,DS-TS,DS-TS gamma=0.99,gamma,0.99,55037,10000,286.2449010388393,1229.0,0.2505
+environment_sweep,smooth_sinusoidal,SW-TS,SW-TS W=2000,window,2000,55037,10000,235.72682565760488,1251.0,0.2931
+environment_sweep,smooth_sinusoidal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,55037,10000,233.20689092528772,1246.0,0.3365
+environment_sweep,smooth_sinusoidal,Baseline,Thompson Sampling,none,none,55038,10000,224.22783122409288,1322.0,0.3344
+environment_sweep,smooth_sinusoidal,D-UCB,D-UCB gamma=0.99,gamma,0.99,55038,10000,325.39465941127423,1195.0,0.2105
+environment_sweep,smooth_sinusoidal,SW-UCB,SW-UCB W=500,window,500,55038,10000,296.19071951513644,1240.0,0.2455
+environment_sweep,smooth_sinusoidal,DS-TS,DS-TS gamma=0.99,gamma,0.99,55038,10000,291.0849640083889,1235.0,0.2667
+environment_sweep,smooth_sinusoidal,SW-TS,SW-TS W=2000,window,2000,55038,10000,190.54082729616286,1343.0,0.3666
+environment_sweep,smooth_sinusoidal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,55038,10000,207.67433916115903,1315.0,0.3789
+environment_sweep,smooth_sinusoidal,Baseline,Thompson Sampling,none,none,55039,10000,231.99094756037107,1287.0,0.3044
+environment_sweep,smooth_sinusoidal,D-UCB,D-UCB gamma=0.99,gamma,0.99,55039,10000,323.24678061798414,1209.0,0.2194
+environment_sweep,smooth_sinusoidal,SW-UCB,SW-UCB W=500,window,500,55039,10000,305.0307716837939,1208.0,0.2428
+environment_sweep,smooth_sinusoidal,DS-TS,DS-TS gamma=0.99,gamma,0.99,55039,10000,291.07972593322415,1227.0,0.2514
+environment_sweep,smooth_sinusoidal,SW-TS,SW-TS W=2000,window,2000,55039,10000,202.72059837842835,1330.0,0.3818
+environment_sweep,smooth_sinusoidal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,55039,10000,217.75679772142564,1320.0,0.3432
+environment_sweep,smooth_sinusoidal,Baseline,Thompson Sampling,none,none,55040,10000,282.3009982274699,1230.0,0.2188
+environment_sweep,smooth_sinusoidal,D-UCB,D-UCB gamma=0.99,gamma,0.99,55040,10000,320.2709672351757,1187.0,0.2251
+environment_sweep,smooth_sinusoidal,SW-UCB,SW-UCB W=500,window,500,55040,10000,298.8961332700556,1210.0,0.2448
+environment_sweep,smooth_sinusoidal,DS-TS,DS-TS gamma=0.99,gamma,0.99,55040,10000,275.2620249952836,1252.0,0.2731
+environment_sweep,smooth_sinusoidal,SW-TS,SW-TS W=2000,window,2000,55040,10000,216.10176618749364,1307.0,0.3017
+environment_sweep,smooth_sinusoidal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,55040,10000,209.50939962577172,1293.0,0.3475
+environment_sweep,smooth_sinusoidal,Baseline,Thompson Sampling,none,none,55041,10000,338.66948838024285,1165.0,0.1631
+environment_sweep,smooth_sinusoidal,D-UCB,D-UCB gamma=0.99,gamma,0.99,55041,10000,322.28660647789366,1185.0,0.224
+environment_sweep,smooth_sinusoidal,SW-UCB,SW-UCB W=500,window,500,55041,10000,300.92448396858595,1222.0,0.2363
+environment_sweep,smooth_sinusoidal,DS-TS,DS-TS gamma=0.99,gamma,0.99,55041,10000,287.39936700111923,1191.0,0.2612
+environment_sweep,smooth_sinusoidal,SW-TS,SW-TS W=2000,window,2000,55041,10000,210.49101922208825,1285.0,0.3287
+environment_sweep,smooth_sinusoidal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,55041,10000,202.8938380845071,1293.0,0.351
+environment_sweep,smooth_sinusoidal,Baseline,Thompson Sampling,none,none,55042,10000,249.91459842279792,1286.0,0.2915
+environment_sweep,smooth_sinusoidal,D-UCB,D-UCB gamma=0.99,gamma,0.99,55042,10000,325.6396027208558,1184.0,0.219
+environment_sweep,smooth_sinusoidal,SW-UCB,SW-UCB W=500,window,500,55042,10000,304.2463268137525,1246.0,0.2444
+environment_sweep,smooth_sinusoidal,DS-TS,DS-TS gamma=0.99,gamma,0.99,55042,10000,286.9086814602345,1268.0,0.2797
+environment_sweep,smooth_sinusoidal,SW-TS,SW-TS W=2000,window,2000,55042,10000,214.6643638842329,1308.0,0.3333
+environment_sweep,smooth_sinusoidal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,55042,10000,211.25138368838392,1316.0,0.3468
+environment_sweep,smooth_sinusoidal,Baseline,Thompson Sampling,none,none,55043,10000,269.28971127571447,1178.0,0.2656
+environment_sweep,smooth_sinusoidal,D-UCB,D-UCB gamma=0.99,gamma,0.99,55043,10000,326.5151159350415,1110.0,0.2152
+environment_sweep,smooth_sinusoidal,SW-UCB,SW-UCB W=500,window,500,55043,10000,299.72486830819224,1138.0,0.2402
+environment_sweep,smooth_sinusoidal,DS-TS,DS-TS gamma=0.99,gamma,0.99,55043,10000,301.2243584392716,1114.0,0.2547
+environment_sweep,smooth_sinusoidal,SW-TS,SW-TS W=2000,window,2000,55043,10000,199.73777855094846,1235.0,0.3737
+environment_sweep,smooth_sinusoidal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,55043,10000,215.13186855640234,1214.0,0.3508
+environment_sweep,smooth_sinusoidal,Baseline,Thompson Sampling,none,none,55044,10000,271.7094667445488,1156.0,0.2425
+environment_sweep,smooth_sinusoidal,D-UCB,D-UCB gamma=0.99,gamma,0.99,55044,10000,321.89942166620216,1128.0,0.2187
+environment_sweep,smooth_sinusoidal,SW-UCB,SW-UCB W=500,window,500,55044,10000,309.0380959476392,1132.0,0.2263
+environment_sweep,smooth_sinusoidal,DS-TS,DS-TS gamma=0.99,gamma,0.99,55044,10000,284.5864949253777,1173.0,0.2524
+environment_sweep,smooth_sinusoidal,SW-TS,SW-TS W=2000,window,2000,55044,10000,197.81416481339093,1259.0,0.3343
+environment_sweep,smooth_sinusoidal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,55044,10000,192.5669002780104,1251.0,0.395
+environment_sweep,smooth_sinusoidal,Baseline,Thompson Sampling,none,none,55045,10000,258.94968201141904,1234.0,0.2948
+environment_sweep,smooth_sinusoidal,D-UCB,D-UCB gamma=0.99,gamma,0.99,55045,10000,322.17903409605543,1177.0,0.2192
+environment_sweep,smooth_sinusoidal,SW-UCB,SW-UCB W=500,window,500,55045,10000,304.76680078802565,1174.0,0.2341
+environment_sweep,smooth_sinusoidal,DS-TS,DS-TS gamma=0.99,gamma,0.99,55045,10000,284.3989051391403,1204.0,0.2485
+environment_sweep,smooth_sinusoidal,SW-TS,SW-TS W=2000,window,2000,55045,10000,199.60026318750943,1297.0,0.3622
+environment_sweep,smooth_sinusoidal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,55045,10000,205.35668983527745,1289.0,0.3761
+environment_sweep,smooth_sinusoidal,Baseline,Thompson Sampling,none,none,55046,10000,252.0080608654918,1265.0,0.2851
+environment_sweep,smooth_sinusoidal,D-UCB,D-UCB gamma=0.99,gamma,0.99,55046,10000,320.39034072998993,1181.0,0.2178
+environment_sweep,smooth_sinusoidal,SW-UCB,SW-UCB W=500,window,500,55046,10000,300.56439719046216,1223.0,0.2552
+environment_sweep,smooth_sinusoidal,DS-TS,DS-TS gamma=0.99,gamma,0.99,55046,10000,283.266345656349,1240.0,0.2728
+environment_sweep,smooth_sinusoidal,SW-TS,SW-TS W=2000,window,2000,55046,10000,162.5859093554841,1358.0,0.4078
+environment_sweep,smooth_sinusoidal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,55046,10000,231.86878089088646,1278.0,0.3211
+environment_sweep,smooth_sinusoidal,Baseline,Thompson Sampling,none,none,55047,10000,319.42308981187136,1177.0,0.1807
+environment_sweep,smooth_sinusoidal,D-UCB,D-UCB gamma=0.99,gamma,0.99,55047,10000,322.64815908488697,1164.0,0.2171
+environment_sweep,smooth_sinusoidal,SW-UCB,SW-UCB W=500,window,500,55047,10000,302.6510015572489,1198.0,0.2363
+environment_sweep,smooth_sinusoidal,DS-TS,DS-TS gamma=0.99,gamma,0.99,55047,10000,290.58226919229423,1218.0,0.2509
+environment_sweep,smooth_sinusoidal,SW-TS,SW-TS W=2000,window,2000,55047,10000,193.58170437994232,1300.0,0.3742
+environment_sweep,smooth_sinusoidal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,55047,10000,199.98037158588096,1284.0,0.3921
+environment_sweep,smooth_sinusoidal,Baseline,Thompson Sampling,none,none,55048,10000,249.73354524753583,1243.0,0.2876
+environment_sweep,smooth_sinusoidal,D-UCB,D-UCB gamma=0.99,gamma,0.99,55048,10000,324.8942622014382,1160.0,0.2145
+environment_sweep,smooth_sinusoidal,SW-UCB,SW-UCB W=500,window,500,55048,10000,309.35986297306727,1177.0,0.2271
+environment_sweep,smooth_sinusoidal,DS-TS,DS-TS gamma=0.99,gamma,0.99,55048,10000,280.92168211141825,1202.0,0.2667
+environment_sweep,smooth_sinusoidal,SW-TS,SW-TS W=2000,window,2000,55048,10000,192.4343247551069,1281.0,0.3809
+environment_sweep,smooth_sinusoidal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,55048,10000,234.9669524887452,1251.0,0.293
+environment_sweep,smooth_sinusoidal,Baseline,Thompson Sampling,none,none,55049,10000,308.6948779464336,1154.0,0.183
+environment_sweep,smooth_sinusoidal,D-UCB,D-UCB gamma=0.99,gamma,0.99,55049,10000,317.3055532890571,1174.0,0.2334
+environment_sweep,smooth_sinusoidal,SW-UCB,SW-UCB W=500,window,500,55049,10000,305.87074363822376,1182.0,0.233
+environment_sweep,smooth_sinusoidal,DS-TS,DS-TS gamma=0.99,gamma,0.99,55049,10000,290.1766539942065,1202.0,0.2443
+environment_sweep,smooth_sinusoidal,SW-TS,SW-TS W=2000,window,2000,55049,10000,228.56646339070136,1247.0,0.3058
+environment_sweep,smooth_sinusoidal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,55049,10000,228.99525669253228,1262.0,0.3129
+environment_sweep,smooth_sinusoidal,Baseline,Thompson Sampling,none,none,55050,10000,223.231622130634,1281.0,0.3416
+environment_sweep,smooth_sinusoidal,D-UCB,D-UCB gamma=0.99,gamma,0.99,55050,10000,323.93750943945054,1167.0,0.2149
+environment_sweep,smooth_sinusoidal,SW-UCB,SW-UCB W=500,window,500,55050,10000,308.4188476767362,1168.0,0.2424
+environment_sweep,smooth_sinusoidal,DS-TS,DS-TS gamma=0.99,gamma,0.99,55050,10000,280.7519192679228,1225.0,0.2681
+environment_sweep,smooth_sinusoidal,SW-TS,SW-TS W=2000,window,2000,55050,10000,244.04951222290583,1240.0,0.285
+environment_sweep,smooth_sinusoidal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,55050,10000,202.04587641231154,1311.0,0.3874
+environment_sweep,smooth_sinusoidal,Baseline,Thompson Sampling,none,none,55051,10000,232.51926360599862,1302.0,0.313
+environment_sweep,smooth_sinusoidal,D-UCB,D-UCB gamma=0.99,gamma,0.99,55051,10000,319.5634107633071,1212.0,0.224
+environment_sweep,smooth_sinusoidal,SW-UCB,SW-UCB W=500,window,500,55051,10000,306.90177442716555,1206.0,0.2328
+environment_sweep,smooth_sinusoidal,DS-TS,DS-TS gamma=0.99,gamma,0.99,55051,10000,283.3356758379568,1229.0,0.262
+environment_sweep,smooth_sinusoidal,SW-TS,SW-TS W=2000,window,2000,55051,10000,190.436252371627,1341.0,0.334
+environment_sweep,smooth_sinusoidal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,55051,10000,218.44766447499205,1329.0,0.3478
+environment_sweep,smooth_sinusoidal,Baseline,Thompson Sampling,none,none,55052,10000,276.4868380191996,1215.0,0.2097
+environment_sweep,smooth_sinusoidal,D-UCB,D-UCB gamma=0.99,gamma,0.99,55052,10000,323.22133359536923,1149.0,0.2253
+environment_sweep,smooth_sinusoidal,SW-UCB,SW-UCB W=500,window,500,55052,10000,305.60493450049034,1166.0,0.242
+environment_sweep,smooth_sinusoidal,DS-TS,DS-TS gamma=0.99,gamma,0.99,55052,10000,270.9347749415258,1196.0,0.2898
+environment_sweep,smooth_sinusoidal,SW-TS,SW-TS W=2000,window,2000,55052,10000,231.7509110629045,1281.0,0.2825
+environment_sweep,smooth_sinusoidal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,55052,10000,193.28566297271934,1294.0,0.3879
+environment_sweep,smooth_sinusoidal,Baseline,Thompson Sampling,none,none,55053,10000,264.70825107854915,1167.0,0.241
+environment_sweep,smooth_sinusoidal,D-UCB,D-UCB gamma=0.99,gamma,0.99,55053,10000,320.55162873512404,1138.0,0.2281
+environment_sweep,smooth_sinusoidal,SW-UCB,SW-UCB W=500,window,500,55053,10000,311.3543731785612,1133.0,0.2289
+environment_sweep,smooth_sinusoidal,DS-TS,DS-TS gamma=0.99,gamma,0.99,55053,10000,296.563425667154,1144.0,0.2513
+environment_sweep,smooth_sinusoidal,SW-TS,SW-TS W=2000,window,2000,55053,10000,225.22558945415963,1216.0,0.2785
+environment_sweep,smooth_sinusoidal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,55053,10000,222.81495551850296,1217.0,0.3107
+environment_sweep,smooth_sinusoidal,Baseline,Thompson Sampling,none,none,55054,10000,269.8055281556728,1223.0,0.2895
+environment_sweep,smooth_sinusoidal,D-UCB,D-UCB gamma=0.99,gamma,0.99,55054,10000,324.8898355743215,1153.0,0.2173
+environment_sweep,smooth_sinusoidal,SW-UCB,SW-UCB W=500,window,500,55054,10000,300.28529143324477,1208.0,0.2476
+environment_sweep,smooth_sinusoidal,DS-TS,DS-TS gamma=0.99,gamma,0.99,55054,10000,281.27149263460876,1209.0,0.2697
+environment_sweep,smooth_sinusoidal,SW-TS,SW-TS W=2000,window,2000,55054,10000,176.07828314194157,1328.0,0.3895
+environment_sweep,smooth_sinusoidal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,55054,10000,267.7320227909986,1196.0,0.2467
+environment_sweep,smooth_sinusoidal,Baseline,Thompson Sampling,none,none,55055,10000,283.4149263211633,1213.0,0.2273
+environment_sweep,smooth_sinusoidal,D-UCB,D-UCB gamma=0.99,gamma,0.99,55055,10000,323.8399022564164,1197.0,0.2165
+environment_sweep,smooth_sinusoidal,SW-UCB,SW-UCB W=500,window,500,55055,10000,305.99737373939365,1209.0,0.2366
+environment_sweep,smooth_sinusoidal,DS-TS,DS-TS gamma=0.99,gamma,0.99,55055,10000,281.6026513155388,1246.0,0.2621
+environment_sweep,smooth_sinusoidal,SW-TS,SW-TS W=2000,window,2000,55055,10000,243.3480250839621,1269.0,0.2778
+environment_sweep,smooth_sinusoidal,Adaptive-SW-TS,Adaptive-SW-TS,threshold_cooldown,0.04|300,55055,10000,212.0892602997356,1299.0,0.3664

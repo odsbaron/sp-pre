@@ -1,0 +1,1899 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thompson Sampling Experiment Dashboard</title>
+  <style>
+    :root {
+      --bg: #f6f7f2;
+      --surface: #ffffff;
+      --surface-2: #eef2ec;
+      --ink: #17211c;
+      --muted: #5f6c65;
+      --line: #dce2dc;
+      --green: #0f766e;
+      --green-2: #d9efeb;
+      --coral: #c75f4a;
+      --coral-2: #f7dfd8;
+      --gold: #a87512;
+      --gold-2: #f2e7c6;
+      --blue: #356d9d;
+      --blue-2: #dceaf1;
+      --shadow: 0 10px 30px rgba(23, 33, 28, 0.08);
+      --radius: 8px;
+      --radius-sm: 6px;
+      color-scheme: light;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.5;
+      letter-spacing: 0;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+      letter-spacing: 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .app {
+      min-height: 100vh;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 16px clamp(18px, 4vw, 48px);
+      border-bottom: 1px solid rgba(220, 226, 220, 0.88);
+      background: rgba(246, 247, 242, 0.94);
+      backdrop-filter: blur(16px);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .mark {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--ink);
+      color: #fff;
+      font-weight: 800;
+      flex: 0 0 auto;
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-size: clamp(18px, 2.2vw, 28px);
+      line-height: 1.12;
+      font-weight: 780;
+    }
+
+    .eyebrow {
+      margin: 0 0 3px;
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 760;
+    }
+
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .icon-button,
+    .tab-button,
+    .chip,
+    .ghost-button {
+      min-height: 36px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: var(--surface);
+      color: var(--ink);
+      cursor: pointer;
+      transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
+    }
+
+    .icon-button {
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      padding: 0;
+    }
+
+    .icon-button svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      stroke-width: 2;
+      fill: none;
+    }
+
+    .icon-button:hover,
+    .tab-button:hover,
+    .chip:hover,
+    .ghost-button:hover {
+      border-color: #b9c5bd;
+      background: #f9faf6;
+      transform: translateY(-1px);
+    }
+
+    main {
+      width: min(1440px, 100%);
+      margin: 0 auto;
+      padding: 22px clamp(16px, 4vw, 48px) 54px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .summary-panel,
+    .figure-panel,
+    .section-band,
+    .control-panel,
+    .content-panel,
+    .gallery-panel,
+    .data-panel {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .summary-panel {
+      padding: clamp(18px, 3vw, 30px);
+    }
+
+    .hero-title {
+      margin: 0;
+      max-width: 980px;
+      font-size: clamp(30px, 5vw, 58px);
+      line-height: 1.03;
+      font-weight: 820;
+    }
+
+    .hero-copy {
+      max-width: 780px;
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: clamp(15px, 1.5vw, 18px);
+    }
+
+    .hero-meta {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
+
+    .meta-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 34px;
+      padding: 6px 10px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: var(--surface-2);
+      color: #314039;
+      font-size: 13px;
+      font-weight: 680;
+    }
+
+    .meta-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 99px;
+      background: var(--green);
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .metric-card {
+      min-height: 132px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fbfcf8;
+    }
+
+    .metric-label {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 760;
+    }
+
+    .metric-value {
+      margin: 8px 0 6px;
+      font-size: clamp(24px, 3.1vw, 38px);
+      line-height: 1;
+      font-weight: 840;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .metric-note {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .figure-panel {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      overflow: hidden;
+    }
+
+    .figure-panel-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 16px 16px 12px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .panel-kicker {
+      margin: 0 0 4px;
+      color: var(--coral);
+      font-size: 12px;
+      font-weight: 780;
+    }
+
+    .panel-title {
+      margin: 0;
+      font-size: 20px;
+      line-height: 1.18;
+    }
+
+    .figure-preview {
+      display: grid;
+      place-items: center;
+      min-height: 318px;
+      padding: 14px;
+      background: #f8faf5;
+    }
+
+    .figure-preview img {
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: #fff;
+    }
+
+    .figure-caption {
+      padding: 12px 16px 16px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .section-band {
+      margin-top: 18px;
+      padding: 16px;
+    }
+
+    .insight-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .insight {
+      min-height: 150px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    .insight strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 15px;
+    }
+
+    .insight p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .ideas-panel {
+      margin-top: 18px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .ideas-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
+      gap: 16px;
+      align-items: start;
+    }
+
+    .idea-lead {
+      position: sticky;
+      top: 88px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fbfcf8;
+    }
+
+    .idea-lead h2 {
+      margin: 0;
+      font-size: clamp(22px, 3vw, 34px);
+      line-height: 1.1;
+    }
+
+    .idea-lead p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .idea-flow {
+      display: grid;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .idea-step {
+      display: grid;
+      grid-template-columns: 34px minmax(0, 1fr);
+      gap: 10px;
+      align-items: start;
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+    }
+
+    .idea-step span {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: var(--radius-sm);
+      background: var(--green-2);
+      color: #07524b;
+      font-weight: 820;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .idea-step strong {
+      display: block;
+      margin-bottom: 3px;
+      font-size: 14px;
+    }
+
+    .idea-step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .idea-stack {
+      display: grid;
+      gap: 14px;
+    }
+
+    .explain-block {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+    }
+
+    .explain-block h3 {
+      margin: 0 0 10px;
+      font-size: 19px;
+      line-height: 1.2;
+    }
+
+    .explain-block p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .explain-block p + p {
+      margin-top: 8px;
+    }
+
+    .algorithm-grid,
+    .interpret-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .algorithm-note,
+    .interpret-note {
+      min-height: 150px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fbfcf8;
+    }
+
+    .algorithm-note strong,
+    .interpret-note strong {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--ink);
+      font-size: 14px;
+    }
+
+    .algorithm-note p,
+    .interpret-note p {
+      font-size: 13px;
+    }
+
+    .experiment-matrix {
+      display: grid;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .matrix-row {
+      display: grid;
+      grid-template-columns: 170px minmax(0, 1fr) minmax(180px, 0.6fr);
+      gap: 10px;
+      align-items: start;
+      padding: 11px 12px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: #fbfcf8;
+      font-size: 13px;
+    }
+
+    .matrix-row strong {
+      color: var(--ink);
+    }
+
+    .matrix-row span {
+      color: var(--muted);
+    }
+
+    .claim-list {
+      display: grid;
+      gap: 8px;
+      margin: 12px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .claim-list li {
+      padding: 10px 11px;
+      border-left: 4px solid var(--green);
+      border-radius: var(--radius-sm);
+      background: #f4faf7;
+      color: #30423a;
+      font-size: 14px;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 22px 0 12px;
+    }
+
+    .tab-button {
+      padding: 8px 12px;
+      font-size: 14px;
+      font-weight: 740;
+    }
+
+    .tab-button.active {
+      border-color: var(--green);
+      background: var(--green-2);
+      color: #06443f;
+    }
+
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: 310px minmax(0, 1fr);
+      gap: 14px;
+      align-items: start;
+    }
+
+    .control-panel {
+      position: sticky;
+      top: 88px;
+      padding: 16px;
+    }
+
+    .control-group + .control-group {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+    }
+
+    .control-label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 780;
+    }
+
+    .select,
+    .search {
+      width: 100%;
+      min-height: 38px;
+      padding: 8px 10px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: #fff;
+      color: var(--ink);
+      outline: none;
+    }
+
+    .select:focus,
+    .search:focus {
+      border-color: var(--green);
+      box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.14);
+    }
+
+    .chip-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .chip {
+      padding: 7px 10px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .chip.active {
+      border-color: var(--coral);
+      background: var(--coral-2);
+      color: #743121;
+    }
+
+    .source-list {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .source-list a {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 8px 9px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      color: #30423a;
+      background: #fbfcf8;
+      font-size: 13px;
+    }
+
+    .content-stack {
+      display: grid;
+      gap: 14px;
+    }
+
+    .content-panel {
+      overflow: hidden;
+    }
+
+    .content-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px;
+      border-bottom: 1px solid var(--line);
+      background: #fbfcf8;
+    }
+
+    .content-head h2 {
+      margin: 0;
+      font-size: clamp(20px, 2.6vw, 30px);
+      line-height: 1.1;
+    }
+
+    .content-head p {
+      max-width: 800px;
+      margin: 7px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .ranking-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(360px, 1.05fr);
+      gap: 14px;
+      padding: 16px;
+    }
+
+    .rank-list {
+      display: grid;
+      gap: 10px;
+      align-content: start;
+    }
+
+    .rank-row {
+      display: grid;
+      grid-template-columns: 32px minmax(0, 1fr);
+      gap: 10px;
+      align-items: center;
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+    }
+
+    .rank-row.best {
+      border-color: rgba(15, 118, 110, 0.42);
+      background: #f2fbf8;
+    }
+
+    .rank-no {
+      display: grid;
+      place-items: center;
+      width: 32px;
+      height: 32px;
+      border-radius: var(--radius-sm);
+      background: var(--surface-2);
+      color: #34423b;
+      font-weight: 820;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .rank-row.best .rank-no {
+      background: var(--green);
+      color: #fff;
+    }
+
+    .rank-topline {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .rank-name {
+      overflow-wrap: anywhere;
+      font-weight: 770;
+    }
+
+    .rank-value {
+      color: var(--ink);
+      font-weight: 820;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    .bar-track {
+      height: 10px;
+      border-radius: 99px;
+      background: #e8eee8;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      min-width: 2px;
+      border-radius: inherit;
+      background: var(--blue);
+    }
+
+    .rank-row.best .bar-fill {
+      background: var(--green);
+    }
+
+    .rank-foot {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .mini-tag {
+      display: inline-flex;
+      min-height: 24px;
+      align-items: center;
+      padding: 3px 7px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: #f9faf6;
+    }
+
+    .table-wrap {
+      overflow: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 640px;
+      font-size: 13px;
+    }
+
+    th,
+    td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      position: sticky;
+      top: 0;
+      background: #f8faf5;
+      color: #3d4943;
+      font-size: 12px;
+      font-weight: 800;
+      z-index: 1;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .numeric {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .split-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      padding: 0 16px 16px;
+    }
+
+    .story-box {
+      min-height: 168px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+    }
+
+    .story-box h3 {
+      margin: 0 0 8px;
+      font-size: 17px;
+    }
+
+    .story-box p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .gallery-panel {
+      margin-top: 18px;
+      padding: 16px;
+    }
+
+    .section-title-row {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    .section-title-row h2 {
+      margin: 0;
+      font-size: clamp(21px, 3vw, 34px);
+      line-height: 1.1;
+    }
+
+    .section-title-row p {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .figure-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 320px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .figure-card[hidden] {
+      display: none;
+    }
+
+    .figure-thumb {
+      display: grid;
+      place-items: center;
+      height: 178px;
+      padding: 10px;
+      border-bottom: 1px solid var(--line);
+      background: #f8faf5;
+    }
+
+    .figure-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .figure-body {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+      padding: 12px;
+    }
+
+    .figure-body h3 {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.25;
+    }
+
+    .figure-body p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .figure-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: auto;
+    }
+
+    .ghost-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 7px 10px;
+      font-size: 13px;
+      font-weight: 760;
+    }
+
+    .category {
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 780;
+    }
+
+    .data-panel {
+      margin-top: 18px;
+      padding: 16px;
+    }
+
+    .pipeline {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .pipeline-step {
+      min-height: 150px;
+      padding: 13px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+    }
+
+    .pipeline-step span {
+      display: inline-grid;
+      place-items: center;
+      width: 28px;
+      height: 28px;
+      margin-bottom: 10px;
+      border-radius: var(--radius-sm);
+      background: var(--blue-2);
+      color: #174761;
+      font-weight: 820;
+    }
+
+    .pipeline-step h3 {
+      margin: 0 0 8px;
+      font-size: 15px;
+    }
+
+    .pipeline-step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .command-box {
+      margin-top: 14px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #111915;
+      color: #e8f0eb;
+      overflow: auto;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: none;
+      place-items: center;
+      padding: 24px;
+      background: rgba(15, 20, 17, 0.58);
+    }
+
+    .modal.open {
+      display: grid;
+    }
+
+    .modal-card {
+      width: min(1120px, 100%);
+      max-height: min(88vh, 920px);
+      display: grid;
+      grid-template-rows: auto minmax(0, 1fr) auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      overflow: hidden;
+      box-shadow: 0 22px 80px rgba(0, 0, 0, 0.28);
+    }
+
+    .modal-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px;
+      border-bottom: 1px solid var(--line);
+      background: #fbfcf8;
+    }
+
+    .modal-head h2 {
+      margin: 0;
+      font-size: 20px;
+      line-height: 1.2;
+    }
+
+    .modal-body {
+      overflow: auto;
+      padding: 16px;
+      background: #f8faf5;
+    }
+
+    .modal-body img {
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: #fff;
+    }
+
+    .modal-foot {
+      padding: 14px 16px 16px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .close-button {
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: #fff;
+      color: var(--ink);
+      cursor: pointer;
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .empty {
+      padding: 24px;
+      border: 1px dashed #b7c3bb;
+      border-radius: var(--radius);
+      color: var(--muted);
+      text-align: center;
+      background: #fbfcf8;
+    }
+
+    @media (max-width: 1180px) {
+      .hero-grid,
+      .ideas-layout,
+      .dashboard-grid,
+      .ranking-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .control-panel {
+        position: static;
+      }
+
+      .idea-lead {
+        position: static;
+      }
+
+      .metric-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .algorithm-grid,
+      .interpret-grid,
+      .gallery-grid,
+      .pipeline {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .matrix-row {
+        grid-template-columns: 150px minmax(0, 1fr);
+      }
+
+      .matrix-row span:last-child {
+        grid-column: 2;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .top-actions {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      main {
+        padding-inline: 12px;
+      }
+
+      .metric-grid,
+      .insight-grid,
+      .algorithm-grid,
+      .interpret-grid,
+      .split-grid,
+      .gallery-grid,
+      .pipeline {
+        grid-template-columns: 1fr;
+      }
+
+      .matrix-row {
+        grid-template-columns: 1fr;
+      }
+
+      .matrix-row span:last-child {
+        grid-column: auto;
+      }
+
+      .hero-title {
+        font-size: 34px;
+      }
+
+      .content-head,
+      .section-title-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .figure-preview {
+        min-height: 220px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <a class="brand" href="#overview" aria-label="Back to overview">
+        <div class="mark">TS</div>
+        <div>
+          <p class="eyebrow">Stochastic Finance Course Project · Experiment Results</p>
+          <h1>Thompson Sampling Dashboard</h1>
+        </div>
+      </a>
+      <nav class="top-actions" aria-label="Page navigation">
+        <a class="icon-button" href="#ideas" aria-label="Research logic">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 22h4M8 14a6 6 0 1 1 8 0c-.8.7-1.2 1.5-1.2 2.2H9.2c0-.7-.4-1.5-1.2-2.2z"/></svg>
+        </a>
+        <a class="icon-button" href="#workspace" aria-label="Experiment comparison">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5M4 19h16M8 15l3-4 3 2 4-7"/></svg>
+        </a>
+        <a class="icon-button" href="#gallery" aria-label="Figure gallery">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></svg>
+        </a>
+        <a class="icon-button" href="#reproduce" aria-label="Reproduce experiments">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 9l-4 3 4 3M16 9l4 3-4 3M13 5l-2 14"/></svg>
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="overview" class="hero-grid" aria-labelledby="dashboard-title">
+        <div class="summary-panel">
+          <h2 id="dashboard-title" class="hero-title">From stationary baselines to non-stationary extensions, the full experiment story in one dashboard.</h2>
+          <p class="hero-copy">
+            This dashboard summarizes the complete experiment package: stationary Bernoulli bandits, abrupt non-stationary environments, window sensitivity, Adaptive-SW-TS ablations, and paper-driven extended sweeps. The central finding is clear: standard Thompson Sampling is strongest in stationary settings; once the reward distribution changes, sliding-window forgetting becomes much more robust.
+          </p>
+          <div class="hero-meta">
+            <span class="meta-pill"><span class="meta-dot"></span>Horizon 10000</span>
+            <span class="meta-pill"><span class="meta-dot"></span>30 runs</span>
+            <span class="meta-pill"><span class="meta-dot"></span>5-arm Bernoulli bandit</span>
+            <span class="meta-pill"><span class="meta-dot"></span>CSV + PNG verified</span>
+          </div>
+
+          <div class="metric-grid" aria-label="Key metrics">
+            <article class="metric-card">
+              <p class="metric-label">Best stationary regret</p>
+              <p class="metric-value">62.75</p>
+              <p class="metric-note">Thompson Sampling, final optimal-arm rate 100%</p>
+            </article>
+            <article class="metric-card">
+              <p class="metric-label">Best non-stationary regret</p>
+              <p class="metric-value">271.44</p>
+              <p class="metric-note">SW-TS, ahead of standard TS at 331.20</p>
+            </article>
+            <article class="metric-card">
+              <p class="metric-label">Best window setting</p>
+              <p class="metric-value">W=2000</p>
+              <p class="metric-note">Final regret 184.30; smaller windows are not always better</p>
+            </article>
+            <article class="metric-card">
+              <p class="metric-label">Environment sweep winner</p>
+              <p class="metric-value">4/4</p>
+              <p class="metric-note">SW-TS W=2000 ranks first in all four environments</p>
+            </article>
+          </div>
+        </div>
+
+        <aside class="figure-panel" aria-label="Primary figure preview">
+          <div class="figure-panel-head">
+            <div>
+              <p class="panel-kicker">Primary Evidence</p>
+              <h2 class="panel-title">Non-stationary cumulative regret</h2>
+            </div>
+            <button class="ghost-button" type="button" data-open-figure="fig2_nonstationary_cumulative_regret.png">View</button>
+          </div>
+          <div class="figure-preview">
+            <img src="assets/figures/fig2_nonstationary_cumulative_regret.png" alt="Cumulative regret curves for algorithms in the non-stationary environment">
+          </div>
+          <p class="figure-caption">In the abrupt-change environment, SW-TS achieves the lowest final regret; standard TS adapts more slowly because stale posterior evidence becomes a burden.</p>
+        </aside>
+      </section>
+
+      <section class="section-band" aria-label="Main findings">
+        <div class="insight-grid">
+          <article class="insight">
+            <strong>Stationary problems remain standard TS territory</strong>
+            <p>Under a fixed reward distribution, Thompson Sampling reaches a cumulative regret of 62.75, well below Epsilon-Greedy, UCB1, and Random.</p>
+          </article>
+          <article class="insight">
+            <strong>Non-stationary problems need active forgetting</strong>
+            <p>After a change point, sliding-window TS is the most stable. DS-TS is more sensitive to its discount factor, and excessive discounting discards useful evidence.</p>
+          </article>
+          <article class="insight">
+            <strong>Adaptive results need a careful claim</strong>
+            <p>Adaptive-SW-TS is a meaningful heuristic extension, but the parameter sweep does not show a stable improvement over fixed large-window SW-TS.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="ideas" class="ideas-panel" aria-labelledby="ideas-title">
+        <div class="ideas-layout">
+          <aside class="idea-lead">
+            <p class="panel-kicker">Research Logic</p>
+            <h2 id="ideas-title">Research Logic: From Online Decisions to Non-Stationary Bandits</h2>
+            <p>
+              This project is not just a collection of performance curves. It answers a layered question: how Thompson Sampling balances exploration and exploitation through Bayesian posteriors when rewards are stable; why stale evidence slows learning when the reward distribution changes; and whether forgetting mechanisms such as windows, discounting, and change detection can fix that failure mode.
+            </p>
+            <div class="idea-flow" aria-label="Research flow">
+              <div class="idea-step">
+                <span>1</span>
+                <div>
+                  <strong>Build the stationary baseline</strong>
+                  <p>Use a standard Bernoulli multi-armed bandit to verify the basic strength of TS.</p>
+                </div>
+              </div>
+              <div class="idea-step">
+                <span>2</span>
+                <div>
+                  <strong>Create a non-stationary shock</strong>
+                  <p>Reverse the best arm halfway through the horizon and observe whether old posterior evidence becomes harmful.</p>
+                </div>
+              </div>
+              <div class="idea-step">
+                <span>3</span>
+                <div>
+                  <strong>Add active forgetting</strong>
+                  <p>Compare sliding windows, discounting, non-stationary UCB baselines, and adaptive windows.</p>
+                </div>
+              </div>
+              <div class="idea-step">
+                <span>4</span>
+                <div>
+                  <strong>Stress-test the conclusion</strong>
+                  <p>Vary windows, discount factors, environment shapes, and Adaptive parameters instead of reporting a single lucky configuration.</p>
+                </div>
+              </div>
+            </div>
+          </aside>
+
+          <div class="idea-stack">
+            <article class="explain-block">
+              <h3>1. Problem Setting: Why Study Bandits</h3>
+              <p>
+                The multi-armed bandit is a canonical online decision problem. At each round, the learner chooses one action, observes only that action's random reward, and never sees the counterfactual rewards of the unchosen actions. The learner must explore uncertain actions while exploiting the action that currently looks best: the exploration-exploitation trade-off.
+              </p>
+              <p>
+                In a stochastic finance setting, the same structure can be read as dynamically allocating trial opportunities across strategies, assets, signals, or trading rules. Bernoulli bandits keep the experiment simple while making the differences among TS, UCB, sliding windows, and discounting easy to inspect.
+              </p>
+            </article>
+
+            <article class="explain-block">
+              <h3>2. Algorithm Intuition: What Each Method Tries to Solve</h3>
+              <div class="algorithm-grid">
+                <div class="algorithm-note">
+                  <strong>Thompson Sampling</strong>
+                  <p>Maintains a Beta posterior for each arm, samples once from each posterior, and selects the arm with the highest sampled value. Uncertainty directly becomes randomized exploration, which is why TS learns efficiently in stationary environments.</p>
+                </div>
+                <div class="algorithm-note">
+                  <strong>Epsilon-Greedy / UCB1</strong>
+                  <p>Epsilon-Greedy explores with a fixed probability; UCB1 encourages uncertain arms through confidence bounds. They serve as classic baselines for assessing whether Bayesian posterior sampling is more effective.</p>
+                </div>
+                <div class="algorithm-note">
+                  <strong>DS-TS / D-UCB</strong>
+                  <p>Discounted methods downweight old observations so the learner focuses on recent evidence. Too much discounting loses useful samples; too little discounting reacts slowly, so these methods are parameter-sensitive.</p>
+                </div>
+                <div class="algorithm-note">
+                  <strong>SW-TS / SW-UCB</strong>
+                  <p>Sliding-window methods keep only the most recent W observations. The mechanism is clear and reacts directly to abrupt changes, but very small windows increase estimation variance.</p>
+                </div>
+                <div class="algorithm-note">
+                  <strong>Adaptive-SW-TS</strong>
+                  <p>A heuristic extension in this project: switch between small and large windows using change detection. It illustrates automatic adaptation, but ablations are needed to test whether it truly beats a fixed window.</p>
+                </div>
+                <div class="algorithm-note">
+                  <strong>Random Baseline</strong>
+                  <p>The random policy is not a serious competitor; it is a lower-bound reference. It confirms that the environment contains learnable signal and that better algorithms are actually extracting reward structure.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="explain-block">
+              <h3>3. Experimental Design: One Question per Experiment</h3>
+              <div class="experiment-matrix" aria-label="Experimental design matrix">
+                <div class="matrix-row">
+                  <strong>Stationary baseline</strong>
+                  <span>The reward distribution stays fixed. This checks whether standard TS quickly concentrates on the best arm.</span>
+                  <span>Figures: fig1, fig1b, fig1c</span>
+                </div>
+                <div class="matrix-row">
+                  <strong>Non-stationary reversal</strong>
+                  <span>The best arm is reversed halfway through the horizon to test how posterior inertia affects learning.</span>
+                  <span>Figures: fig2, fig2b, fig2c, fig3</span>
+                </div>
+                <div class="matrix-row">
+                  <strong>Window sensitivity</strong>
+                  <span>Scan W=100 through W=2000 to locate the balance between forgetting speed and sample efficiency.</span>
+                  <span>Figure: fig4</span>
+                </div>
+                <div class="matrix-row">
+                  <strong>Adaptive ablation</strong>
+                  <span>Compare fixed windows against Adaptive-SW-TS, avoiding a single-point report of the custom method.</span>
+                  <span>Figure: fig5</span>
+                </div>
+                <div class="matrix-row">
+                  <strong>Extended sweeps</strong>
+                  <span>Vary discount strength, environment complexity, threshold, and cooldown to test robustness.</span>
+                  <span>Figures: fig6, fig7, fig8</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="explain-block">
+              <h3>4. Metrics: Why Regret, Reward, and Optimal-Arm Rate Matter</h3>
+              <div class="interpret-grid">
+                <div class="interpret-note">
+                  <strong>Cumulative regret</strong>
+                  <p>Measures the accumulated gap between the chosen arm and the best arm at each round. It is the core metric here; in non-stationary settings, adaptation speed near change points appears directly in the regret slope.</p>
+                </div>
+                <div class="interpret-note">
+                  <strong>Cumulative reward</strong>
+                  <p>Explains performance from a payoff perspective and complements regret. It is useful for intuition, but the primary algorithm ranking is based on regret.</p>
+                </div>
+                <div class="interpret-note">
+                  <strong>Optimal-arm rate</strong>
+                  <p>Tracks how often the current best arm is selected. It is intuitive, but it cannot decide the conclusion alone because an algorithm may recover later after losing substantial regret around the change point.</p>
+                </div>
+                <div class="interpret-note">
+                  <strong>SEM / repeated runs</strong>
+                  <p>Thirty repeated runs reduce random fluctuation. SEM helps judge whether differences are stable instead of mistaking one lucky run for an algorithmic advantage.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="explain-block">
+              <h3>5. Reporting Claims: How to Phrase the Results</h3>
+              <ul class="claim-list">
+                <li>In the stationary environment, standard Thompson Sampling has the lowest regret, showing that Bayesian posterior sampling balances exploration and exploitation efficiently.</li>
+                <li>In the abrupt non-stationary environment, standard TS suffers from posterior inertia; SW-TS adapts faster by retaining only recent observations.</li>
+                <li>Window size creates a bias-variance trade-off: small windows react quickly but estimate noisily, while large windows are stable but may react slowly. In this setup, W=2000 is best.</li>
+                <li>DS-TS is sensitive to the discount factor. A small gamma over-forgets, while a large gamma approaches standard TS, so stronger discounting is not automatically better.</li>
+                <li>Adaptive-SW-TS is a reasonable extension direction, but it does not stably outperform fixed large-window SW-TS in these experiments. It should be reported as a heuristic extension, not a proven improvement.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <div id="workspace" class="tabs" role="tablist" aria-label="Experiment views">
+        <button class="tab-button active" type="button" data-view="stationary">Stationary Baseline</button>
+        <button class="tab-button" type="button" data-view="nonstationary">Non-Stationary Comparison</button>
+        <button class="tab-button" type="button" data-view="window">Window Sensitivity</button>
+        <button class="tab-button" type="button" data-view="ablation">Adaptive Ablation</button>
+        <button class="tab-button" type="button" data-view="extended">Extended Sweeps</button>
+      </div>
+
+      <section class="dashboard-grid" aria-label="Experiment data workspace">
+        <aside class="control-panel">
+          <div class="control-group">
+            <label class="control-label" for="metricSelect">Ranking metric</label>
+            <select id="metricSelect" class="select">
+              <option value="regret">Cumulative regret</option>
+              <option value="reward">Cumulative reward</option>
+              <option value="optimal">Optimal-arm rate</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <span class="control-label">Figure filter</span>
+            <div class="chip-row" id="galleryFilters">
+              <button class="chip active" type="button" data-filter="all">All</button>
+              <button class="chip" type="button" data-filter="baseline">Baseline</button>
+              <button class="chip" type="button" data-filter="nonstationary">Non-stationary</button>
+              <button class="chip" type="button" data-filter="ablation">Ablation</button>
+              <button class="chip" type="button" data-filter="extended">Extended</button>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="figureSearch">Search figures</label>
+            <input id="figureSearch" class="search" type="search" placeholder="regret, window, adaptive...">
+          </div>
+          <div class="control-group">
+            <span class="control-label">Data files</span>
+            <ul class="source-list">
+              <li><a href="data/stationary_summary.csv"><span>stationary_summary</span><span>CSV</span></a></li>
+              <li><a href="data/nonstationary_summary.csv"><span>nonstationary_summary</span><span>CSV</span></a></li>
+              <li><a href="data/window_sensitivity.csv"><span>window_sensitivity</span><span>CSV</span></a></li>
+              <li><a href="data/extended_environment_sweep.csv"><span>environment_sweep</span><span>CSV</span></a></li>
+            </ul>
+          </div>
+        </aside>
+
+        <div class="content-stack">
+          <section class="content-panel" aria-live="polite">
+            <div class="content-head">
+              <div>
+                <p class="panel-kicker" id="viewKicker">Stationary Baseline</p>
+                <h2 id="viewTitle">Stationary baseline algorithm ranking</h2>
+                <p id="viewSummary">With fixed reward distributions, standard Thompson Sampling quickly concentrates on the optimal arm through posterior sampling.</p>
+              </div>
+              <button id="resetMetric" class="ghost-button" type="button">Reset</button>
+            </div>
+            <div class="ranking-layout">
+              <div id="rankList" class="rank-list"></div>
+              <div class="table-wrap">
+                <table>
+                  <thead id="tableHead"></thead>
+                  <tbody id="tableBody"></tbody>
+                </table>
+              </div>
+            </div>
+            <div id="storyGrid" class="split-grid"></div>
+          </section>
+        </div>
+      </section>
+
+      <section id="gallery" class="gallery-panel" aria-labelledby="gallery-title">
+        <div class="section-title-row">
+          <div>
+            <p class="panel-kicker">Figure Gallery</p>
+            <h2 id="gallery-title">Experiment Figure Gallery</h2>
+            <p>All images are copied from the full experiment output directory and can be shared with this HTML folder.</p>
+          </div>
+          <button id="clearSearch" class="ghost-button" type="button">Clear filters</button>
+        </div>
+        <div id="galleryGrid" class="gallery-grid"></div>
+      </section>
+
+      <section id="reproduce" class="data-panel" aria-labelledby="reproduce-title">
+        <div class="section-title-row">
+          <div>
+            <p class="panel-kicker">Reproducibility</p>
+            <h2 id="reproduce-title">Experiment Reproduction Pipeline</h2>
+            <p>The dashboard keeps summary CSVs and final figures. The original experiment codebase lives in the parent directory at `00_extracted/ts_nonstationary_project`.</p>
+          </div>
+        </div>
+        <div class="pipeline">
+          <article class="pipeline-step">
+            <span>1</span>
+            <h3>Environment setup</h3>
+            <p>Create a Python virtual environment, install dependencies, and install the experiment package in editable mode.</p>
+          </article>
+          <article class="pipeline-step">
+            <span>2</span>
+            <h3>Full run</h3>
+            <p>Use `--experiment all --horizon 10000 --n-runs 30` to generate all summary tables and figures.</p>
+          </article>
+          <article class="pipeline-step">
+            <span>3</span>
+            <h3>Result archive</h3>
+            <p>Copy summary files from `results/*.csv` and figures from `results/figures/*.png` into this dashboard directory.</p>
+          </article>
+          <article class="pipeline-step">
+            <span>4</span>
+            <h3>Report usage</h3>
+            <p>Prioritize the non-stationary regret figure, window sensitivity, the three extended sweep figures, and the final ranking tables.</p>
+          </article>
+        </div>
+        <pre class="command-box">cd "00_extracted/ts_nonstationary_project"
+python -m ts_bandits.run_all --experiment all --horizon 10000 --n-runs 30 --output-dir results</pre>
+      </section>
+    </main>
+  </div>
+
+  <div id="figureModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <div class="modal-head">
+        <div>
+          <p class="panel-kicker" id="modalCategory">Figure</p>
+          <h2 id="modalTitle">Figure</h2>
+        </div>
+        <button id="closeModal" class="close-button" type="button" aria-label="Close">×</button>
+      </div>
+      <div class="modal-body">
+        <img id="modalImage" src="" alt="">
+      </div>
+      <div class="modal-foot" id="modalNote"></div>
+    </div>
+  </div>
+
+  <script>
+    const experimentViews = {
+      stationary: {
+        kicker: "Stationary Baseline",
+        title: "Stationary baseline algorithm ranking",
+        summary: "With fixed reward distributions, standard Thompson Sampling quickly concentrates on the optimal arm through posterior sampling.",
+        rows: [
+          { algorithm: "Thompson Sampling", regret: 62.753, reward: 1433.067, optimal: 1.000, sem: 4.864, family: "Bayesian" },
+          { algorithm: "Epsilon-Greedy", regret: 132.142, reward: 1367.733, optimal: 0.900, sem: 20.585, family: "Classic" },
+          { algorithm: "UCB1", regret: 278.110, reward: 1216.467, optimal: 0.667, sem: 3.546, family: "Classic" },
+          { algorithm: "Random", regret: 500.582, reward: 996.900, optimal: 0.267, sem: 0.657, family: "Baseline" }
+        ],
+        stories: [
+          ["Posterior learning is stable enough", "The stationary environment has no change point, so old samples do not mislead the posterior; the exploration-exploitation advantage of TS is fully expressed."],
+          ["UCB and Epsilon-Greedy are conservative but behind", "UCB1 pays extra regret for confidence-bound exploration; Epsilon-Greedy also loses reward through fixed random exploration."]
+        ]
+      },
+      nonstationary: {
+        kicker: "Abrupt Non-Stationary",
+        title: "Abrupt non-stationary algorithm ranking",
+        summary: "In the single-change-point reversal environment, algorithms that forget stale samples are generally more robust, and SW-TS has the lowest final regret.",
+        rows: [
+          { algorithm: "SW-TS", regret: 271.443, reward: 1221.700, optimal: 0.567, sem: 3.468, family: "SW-TS" },
+          { algorithm: "Adaptive-SW-TS", regret: 286.651, reward: 1209.933, optimal: 0.500, sem: 4.740, family: "Adaptive" },
+          { algorithm: "UCB1", regret: 313.600, reward: 1181.400, optimal: 0.433, sem: 3.828, family: "Classic" },
+          { algorithm: "Thompson Sampling", regret: 331.201, reward: 1159.967, optimal: 0.800, sem: 16.450, family: "Bayesian" },
+          { algorithm: "DS-TS", regret: 398.544, reward: 1095.533, optimal: 0.267, sem: 1.837, family: "DS-TS" },
+          { algorithm: "SW-UCB", regret: 434.845, reward: 1061.500, optimal: 0.200, sem: 0.972, family: "SW-UCB" },
+          { algorithm: "Epsilon-Greedy", regret: 440.089, reward: 1055.700, optimal: 0.433, sem: 16.204, family: "Classic" },
+          { algorithm: "D-UCB", regret: 467.579, reward: 1026.300, optimal: 0.367, sem: 0.607, family: "D-UCB" }
+        ],
+        stories: [
+          ["Optimal-arm rate is not the only metric", "Standard TS has a high final optimal-arm rate, but still trails in cumulative regret, which shows that adaptation speed near the change point matters more."],
+          ["Windowing beats fixed posterior memory", "SW-TS discards observations outside the recent window and therefore responds faster to the reversal in reward probabilities."]
+        ]
+      },
+      window: {
+        kicker: "Window Sensitivity",
+        title: "Sliding-window size sensitivity",
+        summary: "In this setup, a large window keeps enough useful evidence while still handling a single reversal; overly small windows create estimation variance.",
+        rows: [
+          { algorithm: "W=2000", regret: 184.304, reward: null, optimal: null, sem: 4.668, family: "SW-TS" },
+          { algorithm: "W=1000", regret: 212.880, reward: null, optimal: null, sem: 3.444, family: "SW-TS" },
+          { algorithm: "W=500", regret: 279.805, reward: null, optimal: null, sem: 4.516, family: "SW-TS" },
+          { algorithm: "W=200", regret: 356.762, reward: null, optimal: null, sem: 2.424, family: "SW-TS" },
+          { algorithm: "W=100", regret: 403.497, reward: null, optimal: null, sem: 1.763, family: "SW-TS" }
+        ],
+        stories: [
+          ["Shorter windows are not always better", "Small windows forget stale data faster, but they also discard many useful samples and make mean estimates unstable."],
+          ["W=2000 is the robust point for this task", "With one reversal and horizon=10000, the large window achieves the lowest final regret."]
+        ]
+      },
+      ablation: {
+        kicker: "Adaptive Ablation",
+        title: "Adaptive-SW-TS versus fixed-window baselines",
+        summary: "Adaptive-SW-TS is a heuristic extension in the course project. The ablation shows it is useful, but it does not stably outperform a fixed large window.",
+        rows: [
+          { algorithm: "SW-TS large W=1000", regret: 225.413, reward: 1284.167, optimal: 0.633, sem: 3.557, family: "Fixed Window" },
+          { algorithm: "SW-TS medium W=500", regret: 269.130, reward: 1239.167, optimal: 0.567, sem: 3.901, family: "Fixed Window" },
+          { algorithm: "Adaptive-SW-TS", regret: 282.011, reward: 1225.600, optimal: 0.400, sem: 4.043, family: "Adaptive" },
+          { algorithm: "SW-TS small W=200", regret: 355.961, reward: 1149.067, optimal: 0.300, sem: 2.168, family: "Fixed Window" }
+        ],
+        stories: [
+          ["A fixed large window remains a strong baseline", "The Adaptive mechanism does not beat large W=1000 here, so the report should avoid presenting it as a verified new advantage."],
+          ["The heuristic value is extensibility", "Adaptive-SW-TS is best framed as a change-detection idea, not as the absolute winner of this experiment."]
+        ]
+      },
+      extended: {
+        kicker: "Paper-Driven Extended Sweeps",
+        title: "Extended ablations and environment complexity",
+        summary: "The three extended sweeps examine forgetting strength, environment shape, and Adaptive threshold/cooldown sensitivity.",
+        rows: [
+          { algorithm: "SW-TS W=2000", regret: 187.672, reward: 1309.567, optimal: 0.648, sem: 5.978, family: "Forgetting sweep" },
+          { algorithm: "SW-TS W=1000", regret: 219.040, reward: 1276.067, optimal: 0.576, sem: 4.874, family: "Forgetting sweep" },
+          { algorithm: "SW-TS W=500", regret: 273.509, reward: 1219.867, optimal: 0.478, sem: 3.358, family: "Forgetting sweep" },
+          { algorithm: "Thompson Sampling", regret: 347.146, reward: 1145.933, optimal: 0.525, sem: 15.729, family: "Forgetting sweep" },
+          { algorithm: "DS-TS gamma=0.995", regret: 350.577, reward: 1146.433, optimal: 0.366, sem: 2.672, family: "Forgetting sweep" },
+          { algorithm: "DS-TS gamma=0.99", regret: 402.643, reward: 1093.400, optimal: 0.296, sem: 1.949, family: "Forgetting sweep" },
+          { algorithm: "DS-TS gamma=0.97", regret: 454.215, reward: 1041.167, optimal: 0.243, sem: 0.932, family: "Forgetting sweep" },
+          { algorithm: "DS-TS gamma=0.95", regret: 467.855, reward: 1031.000, optimal: 0.229, sem: 0.599, family: "Forgetting sweep" }
+        ],
+        stories: [
+          ["SW-TS W=2000 leads in all four environments", "In single reversal, multi-breakpoint, small-gap reversal, and smooth sinusoidal scenarios, the fixed large window achieves the lowest regret."],
+          ["Adaptive parameters are clearly sensitive", "Higher threshold values and shorter cooldowns perform better, but the best Adaptive configuration still trails the fixed W=2000 reference."]
+        ]
+      }
+    };
+
+    const environmentSweep = [
+      { scenario: "single_reversal", best: "SW-TS W=2000", regret: 192.068, second: "Adaptive-SW-TS", secondRegret: 279.712 },
+      { scenario: "multi_breakpoint", best: "SW-TS W=2000", regret: 267.415, second: "Adaptive-SW-TS", secondRegret: 309.442 },
+      { scenario: "small_gap_reversal", best: "SW-TS W=2000", regret: 129.440, second: "Adaptive-SW-TS", secondRegret: 158.506 },
+      { scenario: "smooth_sinusoidal", best: "SW-TS W=2000", regret: 209.194, second: "Adaptive-SW-TS", secondRegret: 219.392 }
+    ];
+
+    const adaptiveSweep = [
+      { algorithm: "SW-TS W=2000", regret: 174.606, reward: 1331.633, optimal: 0.683, sem: 4.603 },
+      { algorithm: "Adaptive threshold=0.08 cooldown=100", regret: 213.740, reward: 1288.867, optimal: 0.591, sem: 3.619 },
+      { algorithm: "Adaptive threshold=0.08 cooldown=300", regret: 217.778, reward: 1289.333, optimal: 0.586, sem: 4.528 },
+      { algorithm: "Adaptive threshold=0.06 cooldown=100", regret: 220.489, reward: 1281.400, optimal: 0.568, sem: 4.033 },
+      { algorithm: "Adaptive threshold=0.08 cooldown=600", regret: 232.856, reward: 1272.667, optimal: 0.553, sem: 4.888 },
+      { algorithm: "Adaptive threshold=0.04 cooldown=300", regret: 284.050, reward: 1221.467, optimal: 0.470, sem: 3.647 },
+      { algorithm: "Adaptive threshold=0.02 cooldown=600", regret: 330.526, reward: 1174.467, optimal: 0.402, sem: 3.066 }
+    ];
+
+    const figures = [
+      { file: "fig0_beta_posterior_demo.png", title: "Beta posterior demo", category: "baseline", note: "Shows the intuition behind Beta posterior updates in Bernoulli TS." },
+      { file: "fig1_stationary_cumulative_regret.png", title: "Stationary cumulative regret", category: "baseline", note: "TS achieves the lowest regret in the stationary baseline." },
+      { file: "fig1b_stationary_cumulative_reward.png", title: "Stationary cumulative reward", category: "baseline", note: "Complements the stationary result from the reward perspective." },
+      { file: "fig1c_stationary_optimal_arm_rate.png", title: "Stationary optimal arm rate", category: "baseline", note: "TS reaches a final optimal-arm selection rate of 100%." },
+      { file: "fig2_nonstationary_cumulative_regret.png", title: "Nonstationary cumulative regret", category: "nonstationary", note: "SW-TS has the lowest final regret in the abrupt-change environment." },
+      { file: "fig2b_nonstationary_cumulative_reward.png", title: "Nonstationary cumulative reward", category: "nonstationary", note: "Compares cumulative reward across algorithms in the non-stationary environment." },
+      { file: "fig2c_nonstationary_optimal_arm_rate.png", title: "Nonstationary optimal arm rate", category: "nonstationary", note: "Shows adaptation before and after the change point." },
+      { file: "fig3_arm_frequency_selected_methods.png", title: "Arm frequency by time block", category: "nonstationary", note: "Tracks arm-selection frequency by time block for selected methods." },
+      { file: "fig4_window_sensitivity.png", title: "Window sensitivity", category: "ablation", note: "W=2000 has the lowest final regret in this setup." },
+      { file: "fig5_ablation_cumulative_regret.png", title: "Adaptive ablation regret", category: "ablation", note: "Compares Adaptive-SW-TS with fixed-window variants." },
+      { file: "fig6_extended_forgetting_sweep.png", title: "Extended forgetting sweep", category: "extended", note: "Compares DS-TS gamma values with SW-TS window sizes." },
+      { file: "fig7_extended_environment_sweep.png", title: "Extended environment sweep", category: "extended", note: "SW-TS W=2000 ranks first across different non-stationary environment shapes." },
+      { file: "fig8_extended_adaptive_sweep.png", title: "Extended adaptive sweep", category: "extended", note: "Shows Adaptive threshold/cooldown parameter sensitivity." }
+    ];
+
+    const metricConfig = {
+      regret: { label: "Cumulative regret", key: "regret", lowerBetter: true, format: (v) => formatNumber(v, 3) },
+      reward: { label: "Cumulative reward", key: "reward", lowerBetter: false, format: (v) => v == null ? "NA" : formatNumber(v, 3) },
+      optimal: { label: "Optimal-arm rate", key: "optimal", lowerBetter: false, format: (v) => v == null ? "NA" : formatPercent(v) }
+    };
+
+    let activeView = "stationary";
+    let activeFigureFilter = "all";
+
+    const rankList = document.getElementById("rankList");
+    const tableHead = document.getElementById("tableHead");
+    const tableBody = document.getElementById("tableBody");
+    const storyGrid = document.getElementById("storyGrid");
+    const metricSelect = document.getElementById("metricSelect");
+    const viewKicker = document.getElementById("viewKicker");
+    const viewTitle = document.getElementById("viewTitle");
+    const viewSummary = document.getElementById("viewSummary");
+    const galleryGrid = document.getElementById("galleryGrid");
+    const figureSearch = document.getElementById("figureSearch");
+    const modal = document.getElementById("figureModal");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalImage = document.getElementById("modalImage");
+    const modalNote = document.getElementById("modalNote");
+    const modalCategory = document.getElementById("modalCategory");
+
+    function formatNumber(value, digits = 2) {
+      if (value == null || Number.isNaN(Number(value))) return "NA";
+      return Number(value).toLocaleString("en-US", {
+        minimumFractionDigits: digits,
+        maximumFractionDigits: digits
+      });
+    }
+
+    function formatPercent(value) {
+      if (value == null || Number.isNaN(Number(value))) return "NA";
+      return `${(Number(value) * 100).toFixed(1)}%`;
+    }
+
+    function sortRows(rows, metric) {
+      const config = metricConfig[metric];
+      const filtered = rows.filter((row) => row[config.key] != null);
+      const missing = rows.filter((row) => row[config.key] == null);
+      filtered.sort((a, b) => {
+        const diff = a[config.key] - b[config.key];
+        return config.lowerBetter ? diff : -diff;
+      });
+      return [...filtered, ...missing];
+    }
+
+    function renderRanking() {
+      const view = experimentViews[activeView];
+      const metric = metricSelect.value;
+      const config = metricConfig[metric];
+      const sorted = sortRows(view.rows, metric);
+      const validValues = sorted.map((row) => row[config.key]).filter((value) => value != null);
+      const maxValue = Math.max(...validValues, 1);
+      const minValue = Math.min(...validValues, 0);
+
+      viewKicker.textContent = view.kicker;
+      viewTitle.textContent = view.title;
+      viewSummary.textContent = view.summary;
+
+      rankList.innerHTML = sorted.map((row, index) => {
+        const value = row[config.key];
+        const isBest = index === 0 && value != null;
+        const width = value == null
+          ? 0
+          : config.lowerBetter
+            ? Math.max(4, (value / maxValue) * 100)
+            : Math.max(4, (value / maxValue) * 100);
+        const metricText = config.format(value);
+        const relative = value == null
+          ? ""
+          : config.lowerBetter
+            ? `${formatNumber(value - minValue, 2)} above best`
+            : `${formatNumber(maxValue - value, 2)} below best`;
+        return `
+          <article class="rank-row ${isBest ? "best" : ""}">
+            <div class="rank-no">${index + 1}</div>
+            <div>
+              <div class="rank-topline">
+                <span class="rank-name">${row.algorithm}</span>
+                <span class="rank-value">${metricText}</span>
+              </div>
+              <div class="bar-track" aria-hidden="true">
+                <div class="bar-fill" style="width:${width}%"></div>
+              </div>
+              <div class="rank-foot">
+                <span class="mini-tag">${row.family}</span>
+                <span class="mini-tag">SEM ${formatNumber(row.sem, 3)}</span>
+                ${relative ? `<span class="mini-tag">${relative}</span>` : ""}
+              </div>
+            </div>
+          </article>
+        `;
+      }).join("");
+
+      renderTable(sorted);
+      renderStories(view);
+    }
+
+    function renderTable(rows) {
+      tableHead.innerHTML = `
+        <tr>
+          <th>Algorithm / configuration</th>
+          <th>Family</th>
+          <th class="numeric">Final regret</th>
+          <th class="numeric">Cumulative reward</th>
+          <th class="numeric">Optimal-arm rate</th>
+          <th class="numeric">SEM</th>
+        </tr>
+      `;
+      tableBody.innerHTML = rows.map((row) => `
+        <tr>
+          <td>${row.algorithm}</td>
+          <td>${row.family}</td>
+          <td class="numeric">${formatNumber(row.regret, 3)}</td>
+          <td class="numeric">${row.reward == null ? "NA" : formatNumber(row.reward, 3)}</td>
+          <td class="numeric">${row.optimal == null ? "NA" : formatPercent(row.optimal)}</td>
+          <td class="numeric">${formatNumber(row.sem, 3)}</td>
+        </tr>
+      `).join("");
+    }
+
+    function renderStories(view) {
+      const extra = activeView === "extended"
+        ? environmentSweep.map((row) => [
+            row.scenario,
+            `${row.best} regret ${formatNumber(row.regret, 3)}; runner-up ${row.second} regret ${formatNumber(row.secondRegret, 3)}.`
+          ])
+        : [];
+      const stories = [...view.stories, ...extra.slice(0, 4)];
+      storyGrid.innerHTML = stories.map(([title, text]) => `
+        <article class="story-box">
+          <h3>${title}</h3>
+          <p>${text}</p>
+        </article>
+      `).join("");
+    }
+
+    function renderGallery() {
+      const query = figureSearch.value.trim().toLowerCase();
+      const visible = figures.filter((figure) => {
+        const matchesFilter = activeFigureFilter === "all" || figure.category === activeFigureFilter;
+        const haystack = `${figure.title} ${figure.category} ${figure.note} ${figure.file}`.toLowerCase();
+        const matchesQuery = !query || haystack.includes(query);
+        return matchesFilter && matchesQuery;
+      });
+
+      galleryGrid.innerHTML = visible.length
+        ? visible.map((figure) => `
+          <article class="figure-card" data-category="${figure.category}">
+            <div class="figure-thumb">
+              <img src="assets/figures/${figure.file}" alt="${figure.title}">
+            </div>
+            <div class="figure-body">
+              <span class="category">${figure.category}</span>
+              <h3>${figure.title}</h3>
+              <p>${figure.note}</p>
+              <div class="figure-actions">
+                <button class="ghost-button" type="button" data-open-figure="${figure.file}">View image</button>
+                <a class="ghost-button" href="assets/figures/${figure.file}">PNG</a>
+              </div>
+            </div>
+          </article>
+        `).join("")
+        : `<div class="empty">No matching figures.</div>`;
+    }
+
+    function openFigure(file) {
+      const figure = figures.find((item) => item.file === file) || figures[0];
+      modalTitle.textContent = figure.title;
+      modalCategory.textContent = figure.category;
+      modalImage.src = `assets/figures/${figure.file}`;
+      modalImage.alt = figure.title;
+      modalNote.textContent = figure.note;
+      modal.classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeFigure() {
+      modal.classList.remove("open");
+      modalImage.src = "";
+      document.body.style.overflow = "";
+    }
+
+    document.querySelectorAll(".tab-button").forEach((button) => {
+      button.addEventListener("click", () => {
+        activeView = button.dataset.view;
+        document.querySelectorAll(".tab-button").forEach((item) => item.classList.toggle("active", item === button));
+        if ((activeView === "window" || activeView === "extended") && metricSelect.value !== "regret") {
+          metricSelect.value = "regret";
+        }
+        renderRanking();
+      });
+    });
+
+    document.getElementById("resetMetric").addEventListener("click", () => {
+      metricSelect.value = "regret";
+      renderRanking();
+    });
+
+    metricSelect.addEventListener("change", renderRanking);
+
+    document.getElementById("galleryFilters").addEventListener("click", (event) => {
+      const button = event.target.closest("[data-filter]");
+      if (!button) return;
+      activeFigureFilter = button.dataset.filter;
+      document.querySelectorAll("#galleryFilters .chip").forEach((item) => item.classList.toggle("active", item === button));
+      renderGallery();
+    });
+
+    figureSearch.addEventListener("input", renderGallery);
+
+    document.getElementById("clearSearch").addEventListener("click", () => {
+      figureSearch.value = "";
+      activeFigureFilter = "all";
+      document.querySelectorAll("#galleryFilters .chip").forEach((item) => item.classList.toggle("active", item.dataset.filter === "all"));
+      renderGallery();
+    });
+
+    document.addEventListener("click", (event) => {
+      const opener = event.target.closest("[data-open-figure]");
+      if (opener) {
+        openFigure(opener.dataset.openFigure);
+      }
+    });
+
+    document.getElementById("closeModal").addEventListener("click", closeFigure);
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) closeFigure();
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && modal.classList.contains("open")) closeFigure();
+    });
+
+    renderRanking();
+    renderGallery();
+  </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+experiment,scenario,family,algorithm,parameter_name,parameter_value,horizon,n_runs,mean_final_regret,std_final_regret,mean_final_reward,mean_final_optimal_arm_rate,sem_final_regret
+adaptive_sweep,single_reversal,SW-TS,SW-TS W=2000,window,2000,10000,30,174.60566666666665,25.211538913121032,1331.6333333333334,0.68328,4.602976190711889
+adaptive_sweep,single_reversal,Adaptive-SW-TS,Adaptive threshold=0.08 cooldown=100,threshold_cooldown,0.08|100,10000,30,213.7403333333333,19.824217770945847,1288.8666666666666,0.5910133333333333,3.6193904193472743
+adaptive_sweep,single_reversal,Adaptive-SW-TS,Adaptive threshold=0.08 cooldown=300,threshold_cooldown,0.08|300,10000,30,217.77766666666665,24.80238985750523,1289.3333333333333,0.5861966666666666,4.528276134997652
+adaptive_sweep,single_reversal,Adaptive-SW-TS,Adaptive threshold=0.06 cooldown=100,threshold_cooldown,0.06|100,10000,30,220.48866666666663,22.088387608117458,1281.4,0.5681066666666666,4.0327693839611705
+adaptive_sweep,single_reversal,Adaptive-SW-TS,Adaptive threshold=0.08 cooldown=600,threshold_cooldown,0.08|600,10000,30,232.85566666666665,26.771783484100194,1272.6666666666667,0.55283,4.887836572961975
+adaptive_sweep,single_reversal,Adaptive-SW-TS,Adaptive threshold=0.06 cooldown=300,threshold_cooldown,0.06|300,10000,30,234.8373333333333,22.473730554971763,1269.0666666666666,0.5468366666666667,4.103123058750376
+adaptive_sweep,single_reversal,Adaptive-SW-TS,Adaptive threshold=0.04 cooldown=100,threshold_cooldown,0.04|100,10000,30,247.84699999999995,21.778337885028844,1254.9333333333334,0.5331766666666666,3.976162308199883
+adaptive_sweep,single_reversal,Adaptive-SW-TS,Adaptive threshold=0.06 cooldown=600,threshold_cooldown,0.06|600,10000,30,254.29999999999998,19.767229760737674,1244.8,0.51894,3.6089858797811574
+adaptive_sweep,single_reversal,Adaptive-SW-TS,Adaptive threshold=0.04 cooldown=300,threshold_cooldown,0.04|300,10000,30,284.04966666666667,19.97791047085779,1221.4666666666667,0.47023,3.6474507389024886
+adaptive_sweep,single_reversal,Adaptive-SW-TS,Adaptive threshold=0.04 cooldown=600,threshold_cooldown,0.04|600,10000,30,300.6593333333333,21.703186629733825,1201.0,0.44016333333333335,3.9624416289499123
+adaptive_sweep,single_reversal,Adaptive-SW-TS,Adaptive threshold=0.02 cooldown=100,threshold_cooldown,0.02|100,10000,30,315.181,18.13974401028362,1192.2666666666667,0.42702666666666667,3.3118489939338542
+adaptive_sweep,single_reversal,Adaptive-SW-TS,Adaptive threshold=0.02 cooldown=300,threshold_cooldown,0.02|300,10000,30,329.30766666666665,17.37011299336589,1172.6666666666667,0.3982233333333333,3.1713342376266938
+adaptive_sweep,single_reversal,Adaptive-SW-TS,Adaptive threshold=0.02 cooldown=600,threshold_cooldown,0.02|600,10000,30,330.52599999999995,16.790533991631662,1174.4666666666667,0.4015833333333333,3.065518073257973
