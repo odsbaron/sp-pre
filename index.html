@@ -180,10 +180,7 @@
     }
 
     .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
-      gap: 14px;
-      align-items: stretch;
+      display: block;
     }
 
     .summary-panel,
@@ -200,6 +197,7 @@
     }
 
     .summary-panel {
+      max-width: 100%;
       padding: clamp(18px, 3vw, 30px);
     }
 
@@ -1176,20 +1174,6 @@
             </article>
           </div>
         </div>
-
-        <aside class="figure-panel" aria-label="Primary figure preview">
-          <div class="figure-panel-head">
-            <div>
-              <p class="panel-kicker">Primary Evidence</p>
-              <h2 class="panel-title">Non-stationary cumulative regret</h2>
-            </div>
-            <button class="ghost-button" type="button" data-open-figure="fig2_nonstationary_cumulative_regret.png">View</button>
-          </div>
-          <div class="figure-preview">
-            <img src="assets/figures/fig2_nonstationary_cumulative_regret.png" alt="Cumulative regret curves for algorithms in the non-stationary environment">
-          </div>
-          <p class="figure-caption">In the abrupt-change environment, SW-TS achieves the lowest final regret; standard TS adapts more slowly because stale posterior evidence becomes a burden.</p>
-        </aside>
       </section>
 
       <section class="section-band" aria-label="Main findings">
